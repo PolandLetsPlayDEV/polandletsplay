@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PolandLet'sPlay – Game Dev & Creator</title>
+  <title>PolandLet'sPlay – Home</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * {
@@ -19,20 +19,49 @@
       line-height: 1.6;
     }
 
+    a {
+      color: #8f94fb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     header {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
-      padding: 2rem;
+      padding: 2rem 1rem;
       text-align: center;
     }
 
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+      margin-bottom: 0.3rem;
     }
 
     header p {
       font-size: 1.2rem;
       color: #eee;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
     }
 
     .container {
@@ -51,15 +80,6 @@
       margin-bottom: 1rem;
     }
 
-    a {
-      color: #8f94fb;
-      text-decoration: none;
-    }
-
-    a:hover {
-      text-decoration: underline;
-    }
-
     .socials {
       margin-top: 1rem;
     }
@@ -70,11 +90,25 @@
     }
 
     footer {
+      background-color: #111;
       text-align: center;
-      padding: 2rem;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #aaa;
-      border-top: 1px solid #222;
+      margin-top: 3rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
     }
 
     @media (max-width: 600px) {
@@ -84,6 +118,15 @@
 
       .container {
         padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
       }
     }
   </style>
@@ -95,29 +138,36 @@
     <p>Game Developer • Publisher • Content Creator</p>
   </header>
 
+  <nav>
+    <a href="livechat.html">Live Chat</a>
+    <a href="about.html">About Me</a>
+    <a href="projects.html">Projects</a>
+    <a href="prisma3d.html">Prisma3D Models</a>
+    <a href="contact.html">Contact</a>
+    <a href="behind.html">Behind the Scenes</a>
+  </nav>
+
   <div class="container">
     <section>
-      <h2>About Me</h2>
-      <p>Hey! I'm <strong>PolandLet'sPlay</strong>, a 14-year-old indie game developer, animator, and the founder of <strong>Engineering Softcodes™</strong>. I work on publishing, game dev, animation, and creating powerful engines like <em>Dynamic Rise</em>.</p>
+      <h2>Welcome</h2>
+      <p>I'm <strong>PolandLet'sPlay</strong> – an indie game developer, creator of <strong>Engineering Softcodes™</strong> and upcoming engines, games, and tools. Explore my work, models, and ideas!</p>
     </section>
 
     <section>
-      <h2>My Projects</h2>
+      <h2>Quick Links</h2>
       <ul>
-        <li><strong>Insane Forest</strong> – A horror survival game</li>
-        <li><strong>The Hallways</strong> – A scary mystery game</li>
-        <li><strong>Choice Of Light</strong> – A modern FPS with style</li>
-        <li><strong>World Of Ruin</strong> – A big open world survival game</li>
-        <li><strong>SOIG</strong> – The State Of Indie Games rating system</li>
-        <li><strong>Orbit Game Store</strong> – A new kind of game launcher/store</li>
+        <li><strong>Insane Forest</strong> – horror survival</li>
+        <li><strong>The Hallways</strong> – creepy and mysterious</li>
+        <li><strong>Choice Of Light</strong> – competitive FPS</li>
+        <li><strong>Orbit Game Store</strong> – cloud-based launcher</li>
       </ul>
     </section>
 
     <section>
-      <h2>Connect With Me</h2>
+      <h2>Follow Me</h2>
       <div class="socials">
         <a href="https://youtube.com/@PolandLetsPlay___" target="_blank">YouTube</a>
-        <a href="https://x.com/polandplayDEV" target="_blank">Twitter (X)</a>
+        <a href="https://x.com/polandplayDEV" target="_blank">Twitter</a>
         <a href="https://linktr.ee/PolandLetsPlay" target="_blank">Linktree</a>
         <a href="https://github.com/PolandLetsPlayDEV" target="_blank">GitHub</a>
         <a href="https://polandplaydev.itch.io/" target="_blank">Itch.io</a>
@@ -126,7 +176,15 @@
   </div>
 
   <footer>
-    &copy; 2025 PolandLet'sPlay – All rights reserved.
+    <div class="footer-links">
+      <a href="contact.html">Contact</a> •
+      <a href="tos.html">Terms of Service</a> •
+      <a href="privacy.html">Privacy Policy</a> •
+      <a href="legal.html">Legal</a> •
+      <a href="api.html">API</a> •
+      <a href="docs.html">Docs</a>
+    </div>
+    &copy; 2025 PolandLet'sPlay. All rights reserved.
   </footer>
 
 </body>
