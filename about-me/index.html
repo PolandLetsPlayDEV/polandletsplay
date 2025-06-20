@@ -80,6 +80,17 @@
       margin-bottom: 1rem;
     }
 
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .icon-grid a img {
+      width: 80px;
+      height: 80px;
+    }
+
     .socials {
       margin-top: 1rem;
     }
@@ -128,6 +139,10 @@
       nav a {
         margin: 0.3rem 0;
       }
+
+      .icon-grid {
+        justify-content: center;
+      }
     }
   </style>
 </head>
@@ -147,39 +162,40 @@
     <a href="behind-the-scense">Behind the Scenes</a>
   </nav>
   
-<div class="container">
+  <div class="container">
     <section>
       <h2>Welcome</h2>
       <p>The Page About <strong>PolandLet'sPlay</strong></p>
     </section>
   
-<section class="projects">
-  <h2>What I'm Working On</h2>
-  <div class="project-card">
-    <h3>Insane Forest</h3>
-    <p>A mysterious survival game in a haunted forest. Alpha 2 in development.</p>
-    <a href="projects/insane-forest">Learn More →</a>
-  </div>
-  <div class="project-card">
-    <h3>Miaga</h3>
-    <p>A free non-subscription livestream service app and it will be available on every device, hardware, and store for free.</p>
-    <a href="projects/miaga">Learn More →</a>
-  </div>
-  <div class="project-card">
-    <h3>Dynamic Rise Game Engine</h3>
-    <p>My own engine supporting 3D, Vulkan Graphics, VR, console & mobile.</p>
-    <a href="projects/dynamic-rise-game-engine">Learn More →</a>
-  </div>
-  <div class="project-card">
-    <h3>ES ID</h3>
-    <p>A secure game account system (like Embark ID or EA App).</p>
-    <a href="projects/es-id">Learn More →</a>
-  </div>
-</section>
+    <section class="projects">
+      <h2>What I'm Working On</h2>
+      <div class="project-card">
+        <h3>Insane Forest</h3>
+        <p>A mysterious survival game in a haunted forest. Alpha 2 in development.</p>
+        <a href="projects/insane-forest">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>Miaga</h3>
+        <p>A free non-subscription livestream service app and it will be available on every device, hardware, and store for free.</p>
+        <a href="projects/miaga">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>Dynamic Rise Game Engine</h3>
+        <p>My own engine supporting 3D, Vulkan Graphics, VR, console & mobile.</p>
+        <a href="projects/dynamic-rise-game-engine">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>ES ID</h3>
+        <p>A secure game account system (like Embark ID or EA App).</p>
+        <a href="projects/es-id">Learn More →</a>
+      </div>
+    </section>
 
-<section class="community">
-  <h2>Skills & Tools I Use</h2>
-  <div class="project-card">
+    <section class="community">
+      <h2>Skills & Tools I Use</h2>
+      <div class="icon-grid">
+        <div class="project-card">
     <a href="https://unity.com/"><img src="https://ucarecdn.com/3d794f4d-0b0f-41f5-bda5-43639211b379/unity_logoremovebgpreview.png" alt="Unity" width="80" height="80"></a>
   </div>
   <div class="project-card">
@@ -212,11 +228,13 @@
   <div class="project-card">
     <a href="https://www.blender.org/"><img src="https://ucarecdn.com/350bcab1-8933-40fa-8c3c-2020ced2e6eb/blender_white_icon.png" alt="Blender" width="80" height="80"></a>
   </div>
-</section>
+      </div>
+    </section>
 
-<section class="projects">
-  <h2>Games I Currently Play</h2>
-  <div class="project-card">
+    <section class="community">
+      <h2>Games I Currently Play</h2>
+      <div class="icon-grid">
+        <div class="project-card">
     <a href="https://www.reachthefinals.com/"><img src="thefinals-logo.png" alt="THE FINALS"></a>
   </div>
   <div class="project-card">
@@ -234,10 +252,11 @@
   <div class="project-card">
     <a href="https://www.callofduty.com/warzone"><img src="warzone-logo.png" alt="Warzone"></a>
   </div>
-</section>
+      </div>
+    </section>
+  </div>
 
-    
-   <footer>
+  <footer>
     <div class="footer-links">
      <a href="contact">Contact</a> •
      <a href="terms-of-service">Terms of Service</a> •
