@@ -3,113 +3,300 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About – PolandLet'sPlay</title>
+  <title>PolandLet'sPlay – About Me</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    body {
-      font-family: 'Outfit', sans-serif;
-      background-color: #0f0f0f;
-      color: #f5f5f5;
+    * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #8f94fb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
     header {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       padding: 2rem 1rem;
       text-align: center;
     }
+
     header h1 {
       font-size: 2.5rem;
+      margin-bottom: 0.3rem;
     }
+
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+
     .container {
+      padding: 2rem;
       max-width: 900px;
       margin: auto;
-      padding: 2rem;
     }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
     h2 {
+      font-size: 2rem;
       color: #8f94fb;
-      margin-top: 2rem;
-      font-size: 1.8rem;
+      margin-bottom: 1rem;
     }
-    p {
-      margin: 1rem 0;
-      line-height: 1.6;
+
+    .icon-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
     }
-    ul {
-      margin-left: 1.5rem;
-      line-height: 1.6;
+
+    .icon-grid a img {
+      width: 80px;
+      height: 80px;
     }
+
+    .socials {
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
     footer {
+      background-color: #111;
       text-align: center;
-      padding: 2rem;
-      background: #111;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
       color: #aaa;
-      margin-top: 4rem;
+      margin-top: 3rem;
     }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
+
+    .footer-box {
+      background-color: #181818;
+      border-radius: 20px;
+     max-width: 1000px;
+     margin: 0 auto;
+     padding: 2rem 1rem;
+     box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
+   }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
+      }
+
+      .icon-grid {
+        justify-content: center;
+      }
+    }
+
   </style>
 </head>
 <body>
 
 <header>
-  <h1>About Me – PolandLet'sPlay</h1>
-</header>
+    <h1>PolandLet'sPlay</h1>
+    <p>The Page About <strong>PolandLet'sPlay</strong></p>
+  </header>
 
-<div class="container">
-  <section>
-    <h2>Who Am I?</h2>
-    <p>
-      Hi! I'm <strong>PolandLet'sPlay</strong> – a passionate indie game developer, publisher, director, animator, and content creator from Poland 🇵🇱. I'm the founder and CEO of <strong>Engineering Softcodes™</strong> and the creator behind projects like <em>Insane Forest</em>, <em>Choice of Light</em>, <em>World of Ruin</em>, and many more.
-    </p>
-  </section>
+  <nav>
+    <a href="index">Home Page</a>
+    <a href="live-chat">Live Chat</a>
+    <a href="projects">Projects</a>
+    <a href="prisma3d-models">Prisma3D Models</a>
+    <a href="contact">Contact</a>
+    <a href="behind-the-scense">Behind the Scenes</a>
+  </nav>
+  
+  <div class="container">
+    <section>
+      <h2>Welcome</h2>
+      <p>The Page About <strong>PolandLet'sPlay</strong></p>
+    </section>
+  
+    <section class="projects">
+      <h2>What I'm Working On</h2>
+      <div class="project-card">
+        <h3>Insane Forest</h3>
+        <p>A mysterious survival game in a haunted forest. Alpha 2 in development.</p>
+        <a href="projects/insane-forest">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>Miaga</h3>
+        <p>A free non-subscription livestream service app and it will be available on every device, hardware, and store for free.</p>
+        <a href="projects/miaga">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>Dynamic Rise Game Engine</h3>
+        <p>My own engine supporting 3D, Vulkan Graphics, VR, console & mobile.</p>
+        <a href="projects/dynamic-rise-game-engine">Learn More →</a>
+      </div>
+      <div class="project-card">
+        <h3>ES ID</h3>
+        <p>A secure game account system (like Embark ID or EA App).</p>
+        <a href="projects/es-id">Learn More →</a>
+      </div>
+    </section>
 
-  <section>
-    <h2>My Mission</h2>
-    <p>
-      My goal is to build unique indie games, create a game engine called <strong>Dynamic Rise</strong>, and launch platforms like <strong>Orbit Game Store</strong> to change how we play and share games – especially for people who can't afford high-end PCs.
-    </p>
-  </section>
+    <section class="community">
+      <h2>Skills & Tools I Use</h2>
+      <div class="icon-grid">
+        <div class="project-card">
+    <a href="https://unity.com/"><img src="https://ucarecdn.com/3d794f4d-0b0f-41f5-bda5-43639211b379/unity_logoremovebgpreview.png" alt="Unity" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.unrealengine.com/"><img src="https://ucarecdn.com/99fb3418-450a-4aab-9278-5a77adfb948d/unreal_white_icon.png" alt="Unreal Engine" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://itsmagic.com.br/"><img src="https://ucarecdn.com/9f85a35e-9167-43fe-b1ae-fa5f2ae9438e/its_magic_engine_white_icon.png" alt="IT’sMagic Engine" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://prisma3d.net/"><img src="https://ucarecdn.com/a5aab931-4bea-40c9-956f-07c8e71ecb22/prisma3d_white_icon.png" alt="Prisma3D" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.ea.com/frostbite"><img src="https://ucarecdn.com/aacbb96e-822b-4949-9029-02b79a9bf963/frostbite_white_icon.png" alt="Frostbite" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.capcut.com/"><img src="https://ucarecdn.com/495a6ac5-163e-4966-82fe-0cc664afcd3b/capcut_white_icon.png" alt="CapCut" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.bandlab.com/"><img src="https://ucarecdn.com/771461e4-368a-49b3-aeb1-567e357f3978/bandlab_white_icon.png" alt="Bandlab" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://en.wikipedia.org/wiki/C_Sharp_(programming_language)"><img src="https://ucarecdn.com/6ef1d551-c1eb-4263-a541-b6871d55877d/c_white_icon.png" alt="C#" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://en.wikipedia.org/wiki/HTML"><img src="https://ucarecdn.com/58495b85-fc5a-4588-951a-188c9548645c/html_white_icon.png" alt="HTML" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://en.wikipedia.org/wiki/Java_(programming_language)"><img src="https://ucarecdn.com/0d37c026-3999-44dd-bd17-d6544c73b5a0/java_white_icon.png" alt="Java" width="80" height="80"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.blender.org/"><img src="https://ucarecdn.com/350bcab1-8933-40fa-8c3c-2020ced2e6eb/blender_white_icon.png" alt="Blender" width="120" height="80"></a>
+  </div>
+      </div>
+    </section>
 
-  <section>
-    <h2>What I'm Working On</h2>
-    <ul>
-      <li>🎮 <strong>Insane Forest Alpha 2</strong> – Survival horror in development.</li>
-      <li>🚀 <strong>Dynamic Rise Game Engine</strong> – My own engine supporting 2D/3D, VR, console & mobile.</li>
-      <li>☁️ <strong>Orbit Game Store</strong> – A hybrid cloud platform for indie games.</li>
-      <li>📽️ YouTube Devlogs, TikToks, and Music.</li>
-    </ul>
-  </section>
+    <section class="community">
+      <h2>Games I Currently Play</h2>
+      <div class="icon-grid">
+        <div class="project-card">
+    <a href="https://www.reachthefinals.com/"><img src="thefinals-logo.png" alt="THE FINALS"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.teamfortress.com/"><img src="tf2-logo.png" alt="Team Fortress 2"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.counter-strike.net/"><img src="cs2-logo.png" alt="Counter Strike 2"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.youtube.com/channel/UCqTjE54bhQ0tvtxaHHHM-hA"><img src="standoff2-logo.png" alt="Standoff 2"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://criticalopsgame.com/"><img src="criticalops-logo.png" alt="Critical Ops"></a>
+  </div>
+  <div class="project-card">
+    <a href="https://www.callofduty.com/warzone"><img src="warzone-logo.png" alt="Warzone"></a>
+  </div>
+      </div>
+    </section>
+  </div>
 
-  <section>
-    <h2>Skills & Tools I Use</h2>
-    <ul>
-      <li>🖥️ Engines: Unity, Unreal, IT’sMagic, Godot</li>
-      <li>🎨 3D/Animation: Prisma3D, Blender</li>
-      <li>🧠 Languages: HTML, CSS, JavaScript, C#, Lua, Python</li>
-      <li>🎼 Sound: FL Studio, CapCut</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Fun Facts</h2>
-    <ul>
-      <li>I'm 14 years old and fully self-taught 💪</li>
-      <li>I love survival and FPS games – inspired by Rust, Stalker 2, and Warzone.</li>
-      <li>I make my own soundtracks and trailers!</li>
-      <li>I want to help other devs and studios grow with my publishing skills.</li>
-    </ul>
-  </section>
-
-  <section>
-    <h2>Connect With Me</h2>
-    <p>
-      Want to work with me, play my games early, or just chat? Reach out through the <a href="live-chat">Live Chat</a> or join my <a href="https://discord.gg/JNzHHHaCfA" target="_blank">Discord</a>!
-    </p>
-  </section>
-</div>
-
-<footer>
-  &copy; 2025 PolandLet'sPlay – Engineering Softcodes™. All rights reserved.
+    
+   <footer>
+  <div class="footer-box">
+    <div class="footer-links">
+      <a href="contact">Contact</a> •
+      <a href="terms-of-service">Terms of Service</a> •
+      <a href="privacy-policy">Privacy Policy</a> •
+      <a href="legal">Legal</a> •
+      <a href="api">API</a> •
+      <a href="open-source">Open Source</a> •
+      <a href="docs">Docs</a>
+    </div>
+    &copy; 2025 PolandLet'sPlay. All rights reserved.
+    <div class="footer-links">
+      <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="YouTube" width="24" height="24"></a>
+      <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://ucarecdn.com/56ac225b-c41b-4fb8-a58f-32513acf1f19/youtube_music_white_icon.png" alt="YouTube Music" width="20" height="20"></a>
+      <a href="https://vk.com/id1037402223" target="_blank"><img src="https://ucarecdn.com/b6cee55b-8694-459d-a148-ce12d5869bf1/vk_white_icon.png" alt="VK" width="24" height="24"></a>
+      <a href="https://id.embark.games/id/the-finals/refer-a-friend/claim?code=KFBINS3CH-2C4KLCUPP-LBMIOOD4" target="_blank"><img src="https://ucarecdn.com/8e862d9e-7246-4cac-b5ca-b1339c50c1ef/embark_id_white_icon.png" alt="Embark ID" width="24" height="24"></a>
+      <a href="https://discord.gg/JNzHHHaCfA" target="_blank"><img src="https://ucarecdn.com/cadbcc53-baa0-44c6-8c69-2f29266050c8/discord_white_icon.png" alt="Discord" width="24" height="24"></a>
+      <a href="https://tiktok.com/@polandletsplay__" target="_blank"><img src="https://ucarecdn.com/99e45cd3-3473-433a-94e1-9c4b534038c1/tiktok_white_icon.png" alt="TikTok" width="24" height="24"></a>
+      <a href="https://pinterest.com/PolandLetsPlay__" target="_blank"><img src="https://ucarecdn.com/84b3fc11-e2cc-4131-88a4-2df119c000ea/pinterest_white_icon.png" alt="Pinterest" width="28" height="28"></a>
+      <a href="https://steamcommunity.com/id/nendofrek555" target="_blank"><img src="https://ucarecdn.com/39e39f70-94a6-47d5-acbe-3581eb6e6f5c/steam_white_icon.png" alt="Steam" width="24" height="24"></a>
+      <a href="https://www.twitch.tv/polandletsplay_" target="_blank"><img src="https://ucarecdn.com/3efb7044-51e5-46b0-b290-c87a3f2a7066/twitch_white_icon.png" alt="Twitch" width="24" height="24"></a>
+      <a href="https://x.com/polandplayDEV" target="_blank"><img src="https://ucarecdn.com/04ac0e42-fd90-4c09-8a55-3753604d3a5c/x_white_icon.png" alt="X" width="24" height="24"></a>
+      <a href="https://www.xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank"><img src="https://ucarecdn.com/8ba62469-b901-40f5-9a2b-021efacd45d5/xbox_white_icon.png" alt="Xbox" width="30" height="30"></a>
+      <a href="https://faceit.com/pl/players/PolandLetsTV" target="_blank"><img src="https://ucarecdn.com/907b9277-6197-491c-accb-78353a9162d5/faceit_white_icon.png" alt="FACEIT" width="24" height="24"></a>
+      <a href="https://github.com/PolandLetsPlayDEV" target="_blank"><img src="https://ucarecdn.com/bd4f2eef-e208-4a03-8ec3-bff3335bc763/github_white_icon.png" alt="GitHub" width="24" height="24"></a>
+      <a href="https://polandplaydev.itch.io/" target="_blank"><img src="https://ucarecdn.com/b4b893b6-8089-49d4-93d9-bef55776ad7e/itchio_white_icon.png" alt="itch.io" width="24" height="24"></a>
+      <a href="https://gamejolt.com/@PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/5573895b-adf2-439b-8871-902f995c430a/gamejolt_white_icon.png" alt="GameJolt" width="24" height="24"></a>
+      <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/c634096d-20a4-4737-8450-a9ac5aee3f3c/linktree_white_icon.png" alt="Linktree" width="35" height="35"></a>
+      <a href="https://www.leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://ucarecdn.com/99d53c88-3da4-4274-bd56-bc197c9abe84/leadwerks_white_icon.png" alt="Leadwerks" width="24" height="24"></a>
+      <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
+    </div>
+  </div>
 </footer>
-
-</body>
-</html>
