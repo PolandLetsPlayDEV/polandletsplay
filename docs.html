@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PolandLet'sPlay Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
@@ -16,80 +16,101 @@
       font-family: 'Outfit', sans-serif;
       background: #0f0f0f;
       color: #f5f5f5;
-      line-height: 1.6;
+      display: flex;
     }
 
-    a {
+    .sidebar {
+      width: 250px;
+      background: #1a1a1a;
+      padding: 1rem;
+      height: 100vh;
+      overflow-y: auto;
+    }
+
+    .sidebar h3 {
       color: #8f94fb;
+      margin-bottom: 1rem;
+    }
+
+    .sidebar ul {
+      list-style: none;
+    }
+
+    .sidebar li {
+      margin-bottom: 0.5rem;
+    }
+
+    .sidebar a {
+      color: #ccc;
       text-decoration: none;
     }
 
-    a:hover {
-      text-decoration: underline;
+    .sidebar a:hover {
+      color: #8f94fb;
+    }
+
+    .main-content {
+      flex: 1;
+      padding: 2rem;
     }
 
     header {
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       padding: 2rem 1rem;
       text-align: center;
-    }
-
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-
-    header p {
-      font-size: 1.2rem;
-      color: #eee;
-    }
-
-    .container {
-      padding: 2rem;
-      max-width: 1000px;
-      margin: auto;
-    }
-
-    .search {
-      text-align: center;
+      color: #fff;
       margin-bottom: 2rem;
     }
 
     .search input {
+      width: 100%;
       padding: 0.8rem;
-      width: 80%;
-      max-width: 500px;
       border-radius: 10px;
       border: none;
       font-size: 1rem;
+      margin-bottom: 2rem;
     }
 
-    .doc-box {
+    .doc-box, .form-box {
       background-color: #1c1c1c;
       border-left: 5px solid #8f94fb;
       padding: 1rem 1.5rem;
-      margin-bottom: 1.5rem;
+      margin-bottom: 2rem;
       border-radius: 10px;
     }
 
-    .doc-box h3 {
+    .doc-box h3, .form-box h3 {
       font-size: 1.5rem;
       color: #8f94fb;
-      margin-bottom: 0.5rem;
-    }
-
-    .doc-box ul {
-      list-style-type: disc;
-      margin-left: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .disclaimer {
       background: #2c2c2c;
       padding: 1rem;
       border-radius: 10px;
-      font-size: 0.9rem;
       color: #ccc;
-      margin-top: 2rem;
+    }
+
+    form input, form textarea {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border: none;
+      border-radius: 8px;
+      font-family: 'Outfit', sans-serif;
+      background: #333;
+      color: #fff;
+    }
+
+    form button {
+      background: #8f94fb;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
     }
 
     footer {
@@ -98,38 +119,48 @@
       padding: 2rem 1rem;
       font-size: 0.9rem;
       color: #aaa;
-      margin-top: 3rem;
     }
   </style>
 </head>
 <body>
+  <div class="sidebar">
+    <h3>Documentation</h3>
+    <ul>
+      <li><a href="#unity">Unity</a></li>
+      <li><a href="#unreal">Unreal Engine</a></li>
+      <li><a href="#leadwerks">Leadwerks</a></li>
+      <li><a href="#more">More Coming Soon</a></li>
+    </ul>
+  </div>
 
-  <header>
-    <h1>PolandLet'sPlay Docs</h1>
-    <p>Community-made tutorials, guides, and help for software, engines, and more.</p>
-  </header>
+  <div class="main-content">
+    <header>
+      <h1>PolandLet'sPlay Docs</h1>
+      <p>Community-made tutorials, guides, and help for software, engines, and more.</p>
+    </header>
 
-  <div class="container">
     <div class="search">
       <input type="text" id="searchInput" placeholder="Search documentation...">
     </div>
 
-    <div class="doc-box">
+    <div class="doc-box" id="unity">
       <h3>Unity</h3>
       <ul>
-        <li>Menu</li>
-        <ul>
-          <li>Loading Screen</li>
-          <li>Pause Menu</li>
+        <li>Menu
           <ul>
-            <li>Add Settings</li>
+            <li>Loading Screen</li>
+            <li>Pause Menu
+              <ul>
+                <li>Add Settings</li>
+              </ul>
+            </li>
+            <li>Quit App/Game</li>
           </ul>
-          <li>Quit App/Game</li>
-        </ul>
+        </li>
       </ul>
     </div>
 
-    <div class="doc-box">
+    <div class="doc-box" id="unreal">
       <h3>Unreal Engine</h3>
       <ul>
         <li>Blueprint Basics</li>
@@ -137,7 +168,7 @@
       </ul>
     </div>
 
-    <div class="doc-box">
+    <div class="doc-box" id="leadwerks">
       <h3>Leadwerks</h3>
       <ul>
         <li>Game Loop</li>
@@ -145,22 +176,32 @@
       </ul>
     </div>
 
-    <div class="doc-box">
+    <div class="doc-box" id="more">
       <h3>More Coming Soon...</h3>
       <ul>
         <li>Godot, Lua, JavaScript, and more!</li>
       </ul>
     </div>
 
-    <div class="disclaimer">
+    <div class="doc-box disclaimer">
       If anything is missing or unclear, feel free to email: <b>polandgaming33@gmail.com</b><br>
       This documentation is strictly for educational and software development purposes. No illegal content is included or allowed.
     </div>
-  </div>
 
-  <footer>
-    &copy; 2025 PolandLet'sPlay. All rights reserved.
-  </footer>
+    <div class="form-box">
+      <h3>Submit a Help Request</h3>
+      <form action="https://formspree.io/f/your_form_id" method="POST">
+        <input type="text" name="username" placeholder="Your Username" required>
+        <input type="email" name="email" placeholder="Your Email" required>
+        <textarea name="message" rows="5" placeholder="Describe what you want help with..." required></textarea>
+        <button type="submit">Submit Request</button>
+      </form>
+    </div>
+
+    <footer>
+      &copy; 2025 PolandLet'sPlay. All rights reserved.
+    </footer>
+  </div>
 
   <script>
     const searchInput = document.getElementById('searchInput');
