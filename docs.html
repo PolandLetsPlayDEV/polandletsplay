@@ -46,6 +46,9 @@
     .sidebar ul li a:hover {
       background: #2e2e3a;
     }
+    .sidebar ul li ul {
+      padding-left: 1rem;
+    }
     .content {
       flex: 1;
       padding: 2rem;
@@ -97,6 +100,22 @@
     <ul>
       <li><a href="#introduction">Introduction</a></li>
       <li><a href="#installation">Installation</a></li>
+      <li>
+        <a href="#unity">Unity</a>
+        <ul>
+          <li><a href="#unity-menu">Menu</a>
+            <ul>
+              <li><a href="#unity-loading">Loading Screen</a></li>
+              <li><a href="#unity-pause">Pause Menu</a>
+                <ul>
+                  <li><a href="#unity-settings">Add Settings</a></li>
+                </ul>
+              </li>
+              <li><a href="#unity-quit">Quit Game</a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
       <li><a href="#tutorials">Tutorials</a></li>
       <li><a href="#api">API Reference</a></li>
       <li><a href="#faq">FAQ</a></li>
@@ -116,6 +135,30 @@
     <section id="installation">
       <h1>Installation</h1>
       <p>Step-by-step setup guides for tools and engines used by PolandLet'sPlay.</p>
+    </section>
+
+    <section id="unity">
+      <h1>Unity</h1>
+    </section>
+    <section id="unity-menu">
+      <h2>Creating a Menu</h2>
+      <p>Learn how to set up a main menu using Unity UI (Canvas, Buttons, Panels).</p>
+    </section>
+    <section id="unity-loading">
+      <h3>Loading Screen</h3>
+      <p>How to create a smooth loading screen using scenes and AsyncOperation.</p>
+    </section>
+    <section id="unity-pause">
+      <h3>Pause Menu</h3>
+      <p>Setup a pause system using Time.timeScale and UI panels.</p>
+    </section>
+    <section id="unity-settings">
+      <h4>Adding Settings</h4>
+      <p>Include sound sliders, resolution options, and toggle features in the pause menu.</p>
+    </section>
+    <section id="unity-quit">
+      <h3>Quit Game</h3>
+      <p>Code to exit the application in both the editor and build version using Application.Quit().</p>
     </section>
 
     <section id="tutorials">
