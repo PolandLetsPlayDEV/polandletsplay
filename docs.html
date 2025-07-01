@@ -6,140 +6,144 @@
   <title>PolandLet'sPlay – Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* (SAME CSS from your homepage, you can copy-paste it directly here too) */
-    /* ... Pasting here the same CSS as you used for consistency */
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
       font-family: 'Outfit', sans-serif;
-      background: #0f0f0f;
+      background: #101820;
       color: #f5f5f5;
-      line-height: 1.6;
-    }
-    a { color: #8f94fb; text-decoration: none; }
-    a:hover { text-decoration: underline; }
-    header {
-      background: linear-gradient(to right, #4e54c8, #8f94fb);
-      padding: 2rem 1rem;
-      text-align: center;
-    }
-    header h1 { font-size: 2.5rem; margin-bottom: 0.3rem; }
-    header p { font-size: 1.2rem; color: #eee; }
-    nav {
-      background-color: #1a1a1a;
-      padding: 1rem;
       display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
     }
-    nav a {
-      color: #f5f5f5;
-      margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
+    .sidebar {
+      width: 260px;
+      background: #1b1f27;
+      padding: 1rem;
+      height: 100vh;
+      overflow-y: auto;
+    }
+    .sidebar h2 {
+      font-size: 1.2rem;
+      margin-bottom: 1rem;
+      color: #8f94fb;
+    }
+    .sidebar ul {
+      list-style: none;
+    }
+    .sidebar ul li {
+      margin-bottom: 0.5rem;
+    }
+    .sidebar ul li a {
+      color: #ddd;
+      text-decoration: none;
+      display: block;
+      padding: 0.4rem;
+      border-radius: 5px;
       transition: 0.3s;
     }
-    nav a:hover { background-color: #2c2c2c; }
-    .container {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
+    .sidebar ul li a:hover {
+      background: #2e2e3a;
     }
-    section { margin-bottom: 2.5rem; }
-    h2 {
+    .content {
+      flex: 1;
+      padding: 2rem;
+    }
+    header {
+      background: #1f2230;
+      padding: 1rem 2rem;
+      color: #fff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    header input[type="text"] {
+      padding: 0.5rem;
+      border-radius: 5px;
+      border: none;
+      width: 200px;
+    }
+    h1 {
       font-size: 2rem;
       color: #8f94fb;
       margin-bottom: 1rem;
     }
-    ul { padding-left: 1.2rem; }
-    li { margin-bottom: 0.6rem; }
-    footer {
-      background-color: #111;
-      text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      color: #aaa;
-      margin-top: 3rem;
-    }
-    .footer-links {
+    p {
       margin-bottom: 1rem;
     }
-    .footer-links a {
-      color: #888;
-      margin: 0 0.5rem;
+    img {
+      max-width: 100%;
+      border-radius: 10px;
     }
-    .footer-links a:hover {
-      color: #ccc;
+    footer {
+      background: #1b1f27;
+      color: #aaa;
+      text-align: center;
+      padding: 1rem;
+      font-size: 0.9rem;
     }
-    @media (max-width: 600px) {
-      header h1 { font-size: 2rem; }
-      .container { padding: 1rem; }
-      nav { flex-direction: column; align-items: center; }
-      nav a { margin: 0.3rem 0; }
+    .disclaimer {
+      margin-top: 2rem;
+      padding: 1rem;
+      background: #222633;
+      border-left: 4px solid #8f94fb;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Docs – PolandLet'sPlay</h1>
-    <p>Game & Tool Documentation, API Info, FAQs and More</p>
-  </header>
-
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="live-chat">Live Chat</a>
-    <a href="about-me">About Me</a>
-    <a href="projects">Projects</a>
-    <a href="prisma3d-models">Prisma3D Models</a>
-    <a href="contact">Contact</a>
-    <a href="docs">Docs</a>
-  </nav>
-
-  <div class="container">
-    <section>
-      <h2>📚 Documentation Overview</h2>
-      <p>This page covers everything about my projects, including how to use them, game engine info, and more.</p>
-    </section>
-
-    <section>
-      <h2>🔌 API Usage</h2>
-      <p>Coming soon: REST APIs for PolandLet'sPlay tools and games.</p>
-      <ul>
-        <li><strong>GET</strong> `/api/games` – list all published games</li>
-        <li><strong>GET</strong> `/api/tools` – tools info & download links</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>🕹 Game Guides</h2>
-      <ul>
-        <li><strong>Insane Forest:</strong> Survive, craft, avoid creatures at night. Alpha 2 has new secrets.</li>
-        <li><strong>Choice of Light:</strong> FPS tips, how to unlock skins, and future updates.</li>
-        <li><strong>World Of Ruin:</strong> What to expect in multiplayer? Early lore & gameplay features.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>❓ FAQ</h2>
-      <ul>
-        <li><strong>Q:</strong> How can I join your dev community?<br><strong>A:</strong> Use the <a href="https://discord.gg/JNzHHHaCfA" target="_blank">Discord link</a>.</li>
-        <li><strong>Q:</strong> Can I use your models/tools?<br><strong>A:</strong> Most are free under open-source or creative use – check each tool’s page.</li>
-        <li><strong>Q:</strong> Can I collaborate with you?<br><strong>A:</strong> DM me on Discord or contact me via the Contact page.</li>
-      </ul>
-    </section>
+  <div class="sidebar">
+    <h2>Docs Navigation</h2>
+    <ul>
+      <li><a href="#introduction">Introduction</a></li>
+      <li><a href="#installation">Installation</a></li>
+      <li><a href="#tutorials">Tutorials</a></li>
+      <li><a href="#api">API Reference</a></li>
+      <li><a href="#faq">FAQ</a></li>
+    </ul>
   </div>
+  <div class="content">
+    <header>
+      <span>PolandLet'sPlay Documentation</span>
+      <input type="text" placeholder="Search docs..." />
+    </header>
+    <section id="introduction">
+      <h1>Welcome to the Docs</h1>
+      <p>This documentation is made to help you understand the tools, game engines, and programming techniques used by PolandLet'sPlay and Engineering Softcodes™.</p>
+      <img src="https://ucarecdn.com/b21766f6-b153-4c73-bef6-57bd7df49100/insane_forest_shot.jpg" alt="Preview Image">
+    </section>
 
-  <footer>
-    <div class="footer-links">
-      <a href="contact">Contact</a> •
-      <a href="terms-of-service">Terms of Service</a> •
-      <a href="privacy-policy">Privacy Policy</a> •
-      <a href="legal">Legal</a> •
-      <a href="api">API</a> •
-      <a href="open-source">Open Source</a> •
-      <a href="docs">Docs</a>
+    <section id="installation">
+      <h1>Installation</h1>
+      <p>Step-by-step setup guides for tools and engines used by PolandLet'sPlay.</p>
+    </section>
+
+    <section id="tutorials">
+      <h1>Tutorials</h1>
+      <p>Crash courses and development guides on game creation, asset usage, and programming.</p>
+    </section>
+
+    <section id="api">
+      <h1>API Reference</h1>
+      <p>Documentation on REST APIs coming soon. Sample Endpoints:</p>
+      <ul>
+        <li>GET /api/games</li>
+        <li>GET /api/tools</li>
+      </ul>
+    </section>
+
+    <section id="faq">
+      <h1>FAQ</h1>
+      <p>Common questions and answers related to my tools and workflow.</p>
+    </section>
+
+    <div class="disclaimer">
+      <p><strong>Disclaimer:</strong> If anything is missing and you want it added, feel free to email <strong>polandgaming33@gmail.com</strong>. This documentation only exists to help and teach others about software, tools, and programming. There is nothing illegal here.</p>
     </div>
-    &copy; 2025 PolandLet'sPlay. All rights reserved.
-  </footer>
+
+    <footer>
+      &copy; 2025 PolandLet'sPlay. All rights reserved.
+    </footer>
+  </div>
 </body>
 </html>
