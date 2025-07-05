@@ -160,7 +160,7 @@
 
 <div class="container">
   <h2>Send Me a Message</h2>
-  <form action="https://formspree.io/f/your-form-id" method="POST">
+  <form action="https://formspree.io/f/movwzeeq" method="POST" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="_replyto" placeholder="Your Email" required>
 
@@ -168,49 +168,87 @@
     <select name="topic" required>
       <optgroup label="In-Game">
         <option>Lag Issues</option>
+        <option>FPS Drops</option>
         <option>Glitches</option>
         <option>Crashes</option>
         <option>Bugs</option>
+        <option>Multiplayer Issues</option>
+        <option>Controller/Gamepad Problems</option>
+        <option>Audio Issues</option>
         <option>Game Account Support</option>
+        <option>Save File Problems</option>
         <option>Other In-Game Issues</option>
       </optgroup>
 
       <optgroup label="Prisma3D Models">
         <option>Texture Bugs</option>
         <option>Rig Bugs</option>
-        <option>Model Requests / Issues</option>
-        <option>Material Bugs</option>
+        <option>Model Requests</option>
+        <option>Material Issues</option>
+        <option>Animation Glitches</option>
+        <option>Export/Import Issues</option>
+        <option>Other Prisma3D Model Issues</option>
       </optgroup>
 
       <optgroup label="Collaboration">
         <option>Need Me as a Sponsor</option>
         <option>Request an Interview</option>
-        <option>Collab on a Game / Mod</option>
+        <option>Collab on a Game</option>
+        <option>Collab on a Music Track</option>
+        <option>Need Help with Animation</option>
+        <option>Want to Publish Together</option>
+        <option>General Collab Request</option>
       </optgroup>
 
       <optgroup label="Licensing & Legal">
-        <option>Request License for Engine/Tools</option>
-        <option>Usage Rights / Permissions</option>
-        <option>Copyright Complaint</option>
-        <option>Trademark Use</option>
+        <option>Request License for Game/Engine/Assets</option>
+        <option>Permission to Use Brand/Logo</option>
+        <option>Copyright Issue</option>
+        <option>Trademark Problem</option>
+        <option>Legal Question</option>
       </optgroup>
 
       <optgroup label="Publishing & Promotion">
-        <option>Want to Publish on OG Store</option>
-        <option>Marketing/Promo Request</option>
+        <option>Publishing Help Needed</option>
+        <option>Promotion Request</option>
+        <option>Social Media Shoutout</option>
+        <option>Trailer Upload Request</option>
+      </optgroup>
+
+      <optgroup label="Game Engine & Tools">
+        <option>Dynamic Rise Game Engine Questions</option>
+        <option>Bug in Game Engine</option>
+        <option>Feature Request</option>
+        <option>Open Source / GitHub Contribution</option>
+        <option>Tool Usage Problems</option>
+      </optgroup>
+
+      <optgroup label="Voice Acting / Music / Audio">
+        <option>I want to voice act in your games</option>
+        <option>Music Submission</option>
+        <option>Soundtrack Licensing</option>
+        <option>Audio Bug Report</option>
       </optgroup>
 
       <optgroup label="Other">
         <option>General Feedback</option>
         <option>Website Bug</option>
+        <option>Docs Suggestion</option>
+        <option>Community Rules Concern</option>
+        <option>Personal Message</option>
         <option>Other Inquiry</option>
       </optgroup>
     </select>
 
-    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <textarea name="message" rows="6" placeholder="Write your full message here..." required></textarea>
+
+    <label for="file">Attach files (PDFs, videos, screenshots, ZIPs, anything):</label>
+    <input type="file" name="attachment" multiple accept="*/*">
+
     <button type="submit">Send</button>
   </form>
 </div>
+
 
 <footer>
   <div class="footer-links">
