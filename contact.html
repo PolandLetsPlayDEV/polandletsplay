@@ -245,6 +245,22 @@
     <label for="file">Attach files (PDFs, videos, screenshots, ZIPs, anything):</label>
     <input type="file" name="attachments" multiple accept="*/*">
 
+    <label for="rating">Optional Feedback Rating:</label>
+<div id="rating" style="display: flex; gap: 5px; margin-bottom: 1rem;">
+  <label><input type="radio" name="rating" value="1"> ⭐</label>
+  <label><input type="radio" name="rating" value="2"> ⭐⭐</label>
+  <label><input type="radio" name="rating" value="3"> ⭐⭐⭐</label>
+  <label><input type="radio" name="rating" value="4"> ⭐⭐⭐⭐</label>
+  <label><input type="radio" name="rating" value="5"> ⭐⭐⭐⭐⭐</label>
+</div>
+
+<label style="margin-top: 1rem; display: flex; align-items: center;">
+  <input type="checkbox" id="agree" required style="margin-right: 10px;">
+  I agree to the <a href="terms-of-service" target="_blank">Terms</a>,
+  <a href="privacy-policy" target="_blank">Privacy Policy</a>, and
+  <a href="legal" target="_blank">Legal Notice</a>.
+</label>
+
     <button type="submit">Send</button>
   </form>
 </div>
