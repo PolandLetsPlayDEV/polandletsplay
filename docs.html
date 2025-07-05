@@ -6,11 +6,7 @@
   <title>PolandLet'sPlay - Docs</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
 
     body {
       font-family: 'Outfit', sans-serif;
@@ -35,9 +31,7 @@
       padding: 1rem;
       overflow-y: auto;
       position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
+      top: 0; left: 0; bottom: 0;
     }
 
     .sidebar h3 {
@@ -53,25 +47,29 @@
       margin-bottom: 0.5rem;
     }
 
-    .toggle-btn {
+    .sidebar-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    .toggle-arrow {
       background: none;
       border: none;
       color: #ccc;
       cursor: pointer;
       font-weight: bold;
       font-size: 1rem;
-      text-align: left;
-      padding: 0.2rem 0;
-      width: 100%;
+      width: 1.5rem;
     }
 
-    .toggle-btn:hover {
+    .toggle-arrow:hover {
       color: #8f94fb;
     }
 
     .nested {
       display: none;
-      padding-left: 1rem;
+      padding-left: 1.5rem;
     }
 
     .nested.active {
@@ -172,10 +170,6 @@
     .footer-links a:hover {
       color: #8f94fb;
     }
-
-    .footer-links img {
-      vertical-align: middle;
-    }
   </style>
 </head>
 <body>
@@ -183,39 +177,57 @@
     <h3>Documentation</h3>
     <ul>
       <li>
-        <button class="toggle-btn">▶ Unity</button>
+        <div class="sidebar-item">
+          <button class="toggle-arrow">▶</button>
+          <a href="unity">Unity</a>
+        </div>
         <ul class="nested">
           <li>
-            <button class="toggle-btn">▶ Menu</button>
+            <div class="sidebar-item">
+              <button class="toggle-arrow">▶</button>
+              <a href="menu">Menu</a>
+            </div>
             <ul class="nested">
               <li><a href="loading-screen">Loading Screen</a></li>
+              <li><a href="quit-app-game">Quit App/Game</a></li>
               <li>
-                <button class="toggle-btn">▶ Pause Menu</button>
+                <div class="sidebar-item">
+                  <button class="toggle-arrow">▶</button>
+                  <a href="pause-menu">Pause Menu</a>
+                </div>
                 <ul class="nested">
                   <li><a href="add-settings">Add Settings</a></li>
                 </ul>
               </li>
-              <li><a href="quit-app-game">Quit App/Game</a></li>
             </ul>
           </li>
         </ul>
       </li>
       <li>
-        <button class="toggle-btn">▶ Unreal Engine</button>
+        <div class="sidebar-item">
+          <button class="toggle-arrow">▶</button>
+          <a href="unreal-engine">Unreal Engine</a>
+        </div>
         <ul class="nested">
           <li><a href="blueprint-basics">Blueprint Basics</a></li>
           <li><a href="level-streaming">Level Streaming</a></li>
         </ul>
       </li>
       <li>
-        <button class="toggle-btn">▶ Leadwerks</button>
+        <div class="sidebar-item">
+          <button class="toggle-arrow">▶</button>
+          <a href="leadwerks">Leadwerks</a>
+        </div>
         <ul class="nested">
           <li><a href="game-loop">Game Loop</a></li>
           <li><a href="fps-controller">FPS Controller</a></li>
         </ul>
       </li>
       <li>
-        <button class="toggle-btn">▶ More Coming Soon</button>
+        <div class="sidebar-item">
+          <button class="toggle-arrow">▶</button>
+          <a href="#">More Coming Soon</a>
+        </div>
         <ul class="nested">
           <li><a href="godot">Godot</a></li>
           <li><a href="javascript">JavaScript</a></li>
@@ -291,12 +303,13 @@
   </div>
 
   <script>
-    document.querySelectorAll('.toggle-btn').forEach(btn => {
-      btn.addEventListener('click', function () {
-        const next = this.nextElementSibling;
+    document.querySelectorAll('.toggle-arrow').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        e.stopPropagation(); // Prevents click from affecting link
+        const next = this.parentElement.nextElementSibling;
         if (next && next.classList.contains('nested')) {
           const isOpen = next.classList.toggle('active');
-          this.textContent = (isOpen ? '▼' : '▶') + ' ' + this.textContent.slice(2);
+          this.textContent = isOpen ? '▼' : '▶';
         }
       });
     });
