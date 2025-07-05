@@ -1,9 +1,10 @@
+<!-- FULL UPDATED CONTACT PAGE -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PolandLet'sPlay- Contact</title>
+  <title>PolandLet'sPlay – Contact</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
@@ -78,7 +79,7 @@
       border-radius: 10px;
     }
 
-    input, textarea {
+    input, textarea, select {
       width: 100%;
       padding: 0.8rem;
       margin-bottom: 1rem;
@@ -143,31 +144,75 @@
 </head>
 <body>
 
-  <header>
-    <h1>Contact PolandLet'sPlay</h1>
-    <p>Get in touch for collaborations, questions, or feedback!</p>
-  </header>
+<header>
+  <h1>Contact PolandLet'sPlay</h1>
+  <p>Get in touch for support, collabs, feedback, bugs, or licensing!</p>
+</header>
 
-  <nav>
-    <a href="index">Home</a>
-    <a href="live-chat">Live Chat</a>
-    <a href="about-me">About Me</a>
-    <a href="projects">Projects</a>
-    <a href="prisma3d-models">Prisma3D Models</a>
-    <a href="behind-the-scense">Behind the Scenes</a>
-  </nav>
+<nav>
+  <a href="index">Home</a>
+  <a href="live-chat">Live Chat</a>
+  <a href="about-me">About Me</a>
+  <a href="projects">Projects</a>
+  <a href="prisma3d-models">Prisma3D Models</a>
+  <a href="behind-the-scense">Behind the Scenes</a>
+</nav>
 
-  <div class="container">
-    <h2>Send Me a Message</h2>
-    <form action="https://formspree.io/f/your-form-id" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="email" name="_replyto" placeholder="Your Email" required>
-      <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-  </div>
+<div class="container">
+  <h2>Send Me a Message</h2>
+  <form action="https://formspree.io/f/your-form-id" method="POST">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="_replyto" placeholder="Your Email" required>
 
-  <footer>
+    <label for="topic">What is your message about?</label>
+    <select name="topic" required>
+      <optgroup label="In-Game">
+        <option>Lag Issues</option>
+        <option>Glitches</option>
+        <option>Crashes</option>
+        <option>Bugs</option>
+        <option>Game Account Support</option>
+        <option>Other In-Game Issues</option>
+      </optgroup>
+
+      <optgroup label="Prisma3D Models">
+        <option>Texture Bugs</option>
+        <option>Rig Bugs</option>
+        <option>Model Requests / Issues</option>
+        <option>Material Bugs</option>
+      </optgroup>
+
+      <optgroup label="Collaboration">
+        <option>Need Me as a Sponsor</option>
+        <option>Request an Interview</option>
+        <option>Collab on a Game / Mod</option>
+      </optgroup>
+
+      <optgroup label="Licensing & Legal">
+        <option>Request License for Engine/Tools</option>
+        <option>Usage Rights / Permissions</option>
+        <option>Copyright Complaint</option>
+        <option>Trademark Use</option>
+      </optgroup>
+
+      <optgroup label="Publishing & Promotion">
+        <option>Want to Publish on OG Store</option>
+        <option>Marketing/Promo Request</option>
+      </optgroup>
+
+      <optgroup label="Other">
+        <option>General Feedback</option>
+        <option>Website Bug</option>
+        <option>Other Inquiry</option>
+      </optgroup>
+    </select>
+
+    <textarea name="message" rows="6" placeholder="Your Message" required></textarea>
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+<footer>
   <div class="footer-links">
     <a href="contact">Contact</a> •
     <a href="terms-of-service">Terms of Service</a> •
@@ -199,6 +244,5 @@
     <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
   </div>
 </footer>
-
 </body>
 </html>
