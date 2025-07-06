@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -81,13 +82,15 @@
     }
 
     .donate-options a, .donate-options button {
-      display: block;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
       margin-bottom: 1rem;
       background-color: #1c1c1c;
       border: 1px solid #8f94fb;
       padding: 1rem;
       border-radius: 10px;
-      text-align: center;
       color: #f5f5f5;
       font-weight: bold;
       transition: 0.3s;
@@ -95,6 +98,11 @@
 
     .donate-options a:hover, .donate-options button:hover {
       background-color: #2c2c2c;
+    }
+
+    .donate-options img {
+      width: 24px;
+      height: 24px;
     }
 
     footer {
@@ -141,15 +149,23 @@
   <section>
     <h2>Ways to Support</h2>
     <div class="donate-options">
-      <a href="https://steamcommunity.com/id/nendofrek555/" target="_blank">Send me a Steam trade (games, items, etc.)</a>
-      <a href="https://www.xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank">Buy me a game on Xbox</a>
-      <a href="https://discord.gg/JNzHHHaCfA" target="_blank">Boost my Discord Server</a>
-      <button onclick="showAd()">Watch a 15-second ad to support</button>
+      <a href="https://steamcommunity.com/id/nendofrek555/" target="_blank">
+        <img src="https://ucarecdn.com/39e39f70-94a6-47d5-acbe-3581eb6e6f5c/steam_white_icon.png" alt="Steam" />
+        Send me a Steam trade (games, items, etc.)
+      </a>
+      <a href="https://www.xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank">
+        <img src="https://ucarecdn.com/8ba62469-b901-40f5-9a2b-021efacd45d5/xbox_white_icon.png" alt="Xbox" />
+        Buy me a game on Xbox
+      </a>
+      <a href="https://discord.gg/JNzHHHaCfA" target="_blank">
+        <img src="https://ucarecdn.com/cadbcc53-baa0-44c6-8c69-2f29266050c8/discord_white_icon.png" alt="Discord" />
+        Boost my Discord Server
+      </a>
+      <a href="donate/watch-15s-ad.html">
+        <img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="Watch Ad" />
+        Watch a 15-second ad to support
+      </a>
     </div>
-  </section>
-  <section id="ad-section" style="display: none;">
-    <h2>Thanks for Watching!</h2>
-    <iframe src="https://syndication.exdynsrv.com/iframe.php?idzone=YOUR_ADSTERRA_ID" width="100%" height="300" frameborder="0" scrolling="no"></iframe>
   </section>
 </div>
 
@@ -186,15 +202,5 @@
     <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
   </div>
 </footer>
-
-<script>
-function showAd() {
-  const btn = event.target;
-  btn.style.display = "none";
-  document.getElementById("ad-section").style.display = "block";
-  // Optionally add a timer or other logic here
-}
-</script>
-
 </body>
 </html>
