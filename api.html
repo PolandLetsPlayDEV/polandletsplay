@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolandLet'sPlay – API</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #8f94fb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+
+    section {
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #8f94fb;
+      margin-bottom: 1rem;
+    }
+
+    pre {
+      background-color: #1f1f1f;
+      color: #fffd87;
+      padding: 1rem;
+      border-radius: 8px;
+      overflow-x: auto;
+    }
+
+    code {
+      font-family: monospace;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 3rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Public API</h1>
+    <p>Use Engineering Softcodes™ data in your own apps or websites</p>
+  </header>
+
+  <nav>
+    <a href="index">Home Page</a>
+    <a href="live-chat">Live Chat</a>
+    <a href="about-me">About Me</a>
+    <a href="projects">Projects</a>
+    <a href="prisma3d-models">Prisma3D Models</a>
+    <a href="contact">Contact</a>
+    <a href="behind-the-scense">Behind the Scenes</a>
+  </nav>
+
+  <div class="container">
+    <section>
+      <h2>What is the API?</h2>
+      <p>This public API lets you access live information, project data, and updates from Engineering Softcodes™. Perfect for tools, apps, dashboards, or if you want to show live patch notes and more.</p>
+    </section>
+
+    <section>
+      <h2>Example Endpoints</h2>
+      <pre><code>GET /api/projects
+GET /api/insane-forest
+GET /api/latest-news
+POST /api/bug-report</code></pre>
+    </section>
+
+    <section>
+      <h2>Authentication</h2>
+      <p>Most endpoints are currently open. Future versions may require an API key for advanced or sensitive data.</p>
+      <pre><code>Authorization: Bearer YOUR_API_KEY</code></pre>
+    </section>
+
+    <section>
+      <h2>Rate Limits</h2>
+      <p>Please limit to <strong>60 requests per minute</strong>. Abuse will result in IP bans.</p>
+    </section>
+
+    <section>
+      <h2>How to Use</h2>
+      <p>You can use tools like <a href="https://www.postman.com/" target="_blank">Postman</a> or simple JavaScript/Fetch to connect with the API.</p>
+    </section>
+
+    <section>
+      <h2>Need Help?</h2>
+      <p>Have questions or need support? Message me on Discord or use the <a href="contact">Contact</a> page.</p>
+    </section>
+  </div>
+
+  <!-- Keep your footer with all social icons here -->
+  <footer>
+    <div class="footer-links">
+      <a href="contact">Contact</a> •
+      <a href="terms-of-service">Terms of Service</a> •
+      <a href="privacy-policy">Privacy Policy</a> •
+      <a href="legal">Legal</a> •
+      <a href="api">API</a> •
+      <a href="open-source">Open Source</a> •
+      <a href="docs">Docs</a> •
+      <a href="donate">Donate</a>
+    </div>
+    &copy; 2025 PolandLet'sPlay. All rights reserved.
+    <!-- You can paste your full social icons here from your main footer if needed -->
+  </footer>
+
+</body>
+</html>
