@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Live Chat – PolandLet'sPlay</title>
+</head>
+<body style="background:#111; color:white; font-family:sans-serif; padding:2rem;">
+
+  <h2>🔥 Live Chat</h2>
+
+  <div id="chat" style="height:300px; overflow-y:auto; border:1px solid #444; padding:1rem; margin-bottom:1rem;"></div>
+
+  <input id="name" placeholder="Your name" style="padding:0.5rem;" />
+  <input id="message" placeholder="Type a message..." style="padding:0.5rem; width:300px;" />
+  <button onclick="sendMessage()">Send</button>
+
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-app.js";
+    import { getDatabase, ref, push, onChildAdded } from "https://www.gstatic.com/firebasejs/11.10.0/firebase-database.js";
+
+    const firebaseConfig = {
+      apiKey: "AIzaSyBBmKNROhrLA8Yj9UAhCEwBWqAnI5y8Yk0",
+      authDomain: "polandletsplay-1b9b9.firebaseapp.com",
+      databaseURL: "https://polandletsplay-1b9b9-default-rtdb.europe-west1.firebasedatabase.app",
+      projectId: "polandletsplay-1b9b9",
+      storageBucket: "polandletsplay-1b9b9.firebasestorage.app",
+      messagingSenderId: "180754599940",
+      appId: "1:180754599940:web:c4df420cbd9c1c20be6551",
+      measurementId: "G-SD8Q7SW8R1"
+    };
+
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+
+    const chatBox = document.getElementById("chat");
+
+    function sendMessage() {
+      const name = document.getElementById("name").value;
+      const message = document.getElementById("message").value;
+      if (name && message) {
+        push(ref(db, "messages"), {
+          name,
+          message,
+          timestamp: Date.now()
+        });
+        document.getElementById("message").value = "";
+      }
+    }
+
+    onChildAdded(ref(db, "messages"), (data) => {
+      const msg = data.val();
+      const msgEl = document.createElement("p");
+      msgEl.innerHTML = `<strong>${msg.name}:</strong> ${msg.message}`;
+      chatBox.appendChild(msgEl);
+      chatBox.scrollTop = chatBox.scrollHeight;
+    });
+  </script>
+
+</body>
+</html>
