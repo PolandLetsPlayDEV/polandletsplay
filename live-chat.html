@@ -29,14 +29,6 @@
       padding: 2rem 1rem;
       text-align: center;
     }
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 0.3rem;
-    }
-    header p {
-      font-size: 1.2rem;
-      color: #eee;
-    }
     nav {
       background-color: #1a1a1a;
       padding: 1rem;
@@ -47,22 +39,11 @@
     nav a {
       color: #f5f5f5;
       margin: 0.5rem 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 10px;
-      transition: 0.3s;
-    }
-    nav a:hover {
-      background-color: #2c2c2c;
     }
     .container {
       padding: 2rem;
       max-width: 900px;
       margin: auto;
-    }
-    h2 {
-      font-size: 2rem;
-      color: #8f94fb;
-      margin-bottom: 1rem;
     }
     #chat {
       height: 60vh;
@@ -74,18 +55,22 @@
     }
     .chat-inputs {
       display: flex;
+      flex-wrap: wrap;
       gap: 0.5rem;
     }
     .chat-inputs input, .chat-inputs button {
       padding: 0.8rem;
-      font-family: 'Outfit', sans-serif;
       border-radius: 8px;
       border: none;
     }
-    .chat-inputs input {
+    .chat-inputs input[type="text"] {
       flex: 1;
       background: #2c2c2c;
       color: #fff;
+    }
+    .chat-inputs input[type="file"] {
+      background: #1c1c1c;
+      color: #ccc;
     }
     .chat-inputs button {
       background: #8f94fb;
@@ -93,8 +78,6 @@
       cursor: pointer;
       font-weight: bold;
     }
-
-    /* Footer Styling */
     footer {
       background-color: #111;
       text-align: center;
@@ -108,7 +91,6 @@
     }
     .footer-links a {
       margin: 0 0.5rem;
-      display: inline-block;
       color: #888;
     }
     .footer-links a:hover {
@@ -118,9 +100,16 @@
       margin: 0.3rem 0.25rem;
       vertical-align: middle;
     }
+    img.chat-image {
+      max-width: 100px;
+      max-height: 100px;
+      margin: 5px 0;
+      display: block;
+    }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Live Chat</h1>
     <p>A public Live Chat where everyone can chat :D</p>
@@ -140,8 +129,9 @@
     <h2>Live Chat</h2>
     <div id="chat"></div>
     <div class="chat-inputs">
-      <input id="name" placeholder="Your name" />
-      <input id="message" placeholder="Type a message…" />
+      <input type="text" id="name" placeholder="Your name" />
+      <input type="text" id="message" placeholder="Type a message…" />
+      <input type="file" id="imageInput" accept="image/*" />
       <button onclick="sendMessage()">Send</button>
     </div>
   </div>
@@ -164,46 +154,80 @@
     const db = getDatabase(app);
 
     const chatBox = document.getElementById("chat");
+    const imageInput = document.getElementById("imageInput");
+
+    const badWordRegex = /(?:n[\W_]*[i1l!|]+[\W_]*[gq69]+[\W_]*[e3]+[\W_]*r+|f[\W_]*a[\W_]*g+|c[\W_]*u[\W_]*n[\W_]*t|r[\W_]*e[\W_]*t[\W_]*a[\W_]*r[\W_]*d|s[\W_]*l[\W_]*u[\W_]*t|b[\W_]*i[\W_]*t[\W_]*c[\W_]*h|s[\W_]*h[\W_]*i[\W_]*t|a[\W_]*s[\W_]*s[\W_]*h?[\W_]*o[\W_]*l[\W_]*e)/i;
+
     window.sendMessage = () => {
       const name = document.getElementById("name").value.trim();
-      const message = document.getElementById("message").value.trim();
-      const bannedWords = ["nigger", "nigga", "faggot", "retard", "fuck", "shit", "bitch", "cunt", "slut"];
+      let message = document.getElementById("message").value.trim();
 
-      const isClean = !bannedWords.some(word => message.toLowerCase().includes(word));
-      if (!isClean) {
+      if (!name || (!message && !imageInput.files[0])) return;
+
+      if (badWordRegex.test(message)) {
         alert("⚠️ Inappropriate language is not allowed.");
         return;
       }
 
-      if (name && message) {
-        push(ref(db, "messages"), { name, message, timestamp: Date.now() });
+      if (message.startsWith('[sticker:')) {
+        // Optional: support stickers
+        message = `<img src="stickers/${message.replace('[sticker:', '').replace(']', '')}.png" alt="sticker" class="chat-image">`;
+      }
+
+      const send = (imageURL = null) => {
+        push(ref(db, "messages"), {
+          name,
+          message,
+          image: imageURL,
+          timestamp: Date.now()
+        });
         document.getElementById("message").value = "";
+        imageInput.value = "";
+      };
+
+      if (imageInput.files[0]) {
+        const file = imageInput.files[0];
+        const reader = new FileReader();
+        reader.onload = () => {
+          if (file.name.match(/(nude|xxx|nsfw|boobs|porn|sex)/i)) {
+            alert("⚠️ Inappropriate image detected.");
+            return;
+          }
+          send(reader.result);
+        };
+        reader.readAsDataURL(file);
+      } else {
+        send();
       }
     };
 
     onChildAdded(ref(db, "messages"), snap => {
-      const { name, message } = snap.val();
-      const el = document.createElement("p");
-      el.innerHTML = `<strong>${name}:</strong> ${message}`;
+      const { name, message, image } = snap.val();
+      const el = document.createElement("div");
+      el.innerHTML = `<strong>${name}:</strong> ${message || ''}`;
+      if (image) {
+        const img = document.createElement("img");
+        img.src = image;
+        img.className = "chat-image";
+        el.appendChild(img);
+      }
       chatBox.appendChild(el);
       chatBox.scrollTop = chatBox.scrollHeight;
     });
   </script>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-links">
-      <a href="contact">Contact</a> •
-      <a href="terms-of-service">Terms of Service</a> •
-      <a href="privacy-policy">Privacy Policy</a> •
-      <a href="legal">Legal</a> •
-      <a href="api">API</a> •
-      <a href="open-source">Open Source</a> •
-      <a href="docs">Docs</a> •
-      <a href="donate">Donate</a>
-    </div>
-    &copy; 2025 PolandLet'sPlay. All rights reserved.
-    <div class="footer-links">
+<footer>
+  <div class="footer-links">
+    <a href="contact">Contact</a> •
+    <a href="terms-of-service">Terms of Service</a> •
+    <a href="privacy-policy">Privacy Policy</a> •
+    <a href="legal">Legal</a> •
+    <a href="api">API</a> •
+    <a href="open-source">Open Source</a> •
+    <a href="docs">Docs</a> •
+    <a href="donate">Donate</a>
+  </div>
+  &copy; 2025 PolandLet'sPlay. All rights reserved.
+  <div class="footer-links">
     <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="YouTube" width="24" height="24"></a>
     <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://ucarecdn.com/56ac225b-c41b-4fb8-a58f-32513acf1f19/youtube_music_white_icon.png" alt="YouTube Music" width="20" height="20"></a>
     <a href="https://vk.com/id1037402223" target="_blank"><img src="https://ucarecdn.com/b6cee55b-8694-459d-a148-ce12d5869bf1/vk_white_icon.png" alt="VK" width="24" height="24"></a>
@@ -222,7 +246,7 @@
     <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/c634096d-20a4-4737-8450-a9ac5aee3f3c/linktree_white_icon.png" alt="Linktree" width="35" height="35"></a>
     <a href="https://www.leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://ucarecdn.com/99d53c88-3da4-4274-bd56-bc197c9abe84/leadwerks_white_icon.png" alt="Leadwerks" width="24" height="24"></a>
     <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
-    </div>
-  </footer>
+  </div>
+</footer>
 </body>
 </html>
