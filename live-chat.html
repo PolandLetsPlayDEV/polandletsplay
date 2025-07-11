@@ -93,6 +93,8 @@
       cursor: pointer;
       font-weight: bold;
     }
+
+    /* Footer Styling */
     footer {
       background-color: #111;
       text-align: center;
@@ -101,12 +103,27 @@
       color: #aaa;
       margin-top: 3rem;
     }
+    .footer-links {
+      margin: 0.5rem 0;
+    }
+    .footer-links a {
+      margin: 0 0.5rem;
+      display: inline-block;
+      color: #888;
+    }
+    .footer-links a:hover {
+      color: #ccc;
+    }
+    .footer-links img {
+      margin: 0.3rem 0.25rem;
+      vertical-align: middle;
+    }
   </style>
 </head>
 <body>
   <header>
     <h1>Live Chat</h1>
-    <p>a public Live Chat where everyone can chat :D</p>
+    <p>A public Live Chat where everyone can chat :D</p>
   </header>
 
   <nav>
@@ -150,6 +167,14 @@
     window.sendMessage = () => {
       const name = document.getElementById("name").value.trim();
       const message = document.getElementById("message").value.trim();
+      const bannedWords = ["nigger", "nigga", "faggot", "retard", "fuck", "shit", "bitch", "cunt", "slut"];
+
+      const isClean = !bannedWords.some(word => message.toLowerCase().includes(word));
+      if (!isClean) {
+        alert("⚠️ Inappropriate language is not allowed.");
+        return;
+      }
+
       if (name && message) {
         push(ref(db, "messages"), { name, message, timestamp: Date.now() });
         document.getElementById("message").value = "";
@@ -164,19 +189,21 @@
       chatBox.scrollTop = chatBox.scrollHeight;
     });
   </script>
-<footer>
-  <div class="footer-links">
-    <a href="contact">Contact</a> •
-    <a href="terms-of-service">Terms of Service</a> •
-    <a href="privacy-policy">Privacy Policy</a> •
-    <a href="legal">Legal</a> •
-    <a href="api">API</a> •
-    <a href="open-source">Open Source</a> •
-    <a href="docs">Docs</a> •
-    <a href="donate">Donate</a>
-  </div>
-  &copy; 2025 PolandLet'sPlay. All rights reserved.
-  <div class="footer-links">
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-links">
+      <a href="contact">Contact</a> •
+      <a href="terms-of-service">Terms of Service</a> •
+      <a href="privacy-policy">Privacy Policy</a> •
+      <a href="legal">Legal</a> •
+      <a href="api">API</a> •
+      <a href="open-source">Open Source</a> •
+      <a href="docs">Docs</a> •
+      <a href="donate">Donate</a>
+    </div>
+    &copy; 2025 PolandLet'sPlay. All rights reserved.
+    <div class="footer-links">
     <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="YouTube" width="24" height="24"></a>
     <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://ucarecdn.com/56ac225b-c41b-4fb8-a58f-32513acf1f19/youtube_music_white_icon.png" alt="YouTube Music" width="20" height="20"></a>
     <a href="https://vk.com/id1037402223" target="_blank"><img src="https://ucarecdn.com/b6cee55b-8694-459d-a148-ce12d5869bf1/vk_white_icon.png" alt="VK" width="24" height="24"></a>
@@ -195,7 +222,7 @@
     <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/c634096d-20a4-4737-8450-a9ac5aee3f3c/linktree_white_icon.png" alt="Linktree" width="35" height="35"></a>
     <a href="https://www.leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://ucarecdn.com/99d53c88-3da4-4274-bd56-bc197c9abe84/leadwerks_white_icon.png" alt="Leadwerks" width="24" height="24"></a>
     <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
-  </div>
-</footer>
+    </div>
+  </footer>
 </body>
 </html>
