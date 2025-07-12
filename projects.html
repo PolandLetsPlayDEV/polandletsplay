@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolandLet'sPlay – Projects</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: 'Outfit', sans-serif; background: #0f0f0f; color: #f5f5f5; line-height: 1.6; }
+    a { color: #8f94fb; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+    .container {
+      padding: 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+    h2 {
+      font-size: 2rem;
+      color: #8f94fb;
+      margin-bottom: 1.5rem;
+    }
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+    .project-card {
+      background: #1c1c1c;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #2c2c2c;
+      transition: 0.3s;
+    }
+    .project-card:hover {
+      border-color: #8f94fb;
+      transform: translateY(-4px);
+    }
+    .project-card h3 {
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+    .project-card p {
+      color: #bbb;
+      margin-bottom: 1rem;
+    }
+    .project-card a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      background-color: #8f94fb;
+      color: #000;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      font-weight: bold;
+      transition: 0.2s;
+    }
+    .project-card a:hover {
+      background-color: #6f74f5;
+    }
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 3rem;
+    }
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+    .footer-links a:hover {
+      color: #ccc;
+    }
+    .footer-links img {
+      margin: 0.3rem 0.25rem;
+      vertical-align: middle;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>My Projects</h1>
+  <p>Explore all of my indie games, tools, engines, and creations!</p>
+</header>
+
+<nav>
+  <a href="index">Home Page</a>
+  <a href="live-chat">Live Chat</a>
+  <a href="about-me">About Me</a>
+  <a href="projects">Projects</a>
+  <a href="prisma3d-models">Prisma3D Models</a>
+  <a href="contact">Contact</a>
+  <a href="behind-the-scense">Behind the Scenes</a>
+</nav>
+
+<div class="container">
+  <h2>Active Projects</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Insane Forest</h3>
+      <p>A mysterious survival game set in a haunted forest. Full of secrets, puzzles and danger. Alpha 2 is in development!</p>
+      <a href="insane-forest">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>Miaga</h3>
+      <p>Miaga is a free livestreaming app with no subscriptions. Play, watch or stream on any device and platform, fully free.</p>
+      <a href="miaga">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>World of Ruin</h3>
+      <p>Massive open-world survival game with creepy creatures, post-apocalyptic cities, and multiplayer chaos.</p>
+      <a href="world-of-ruin">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>Choice of Light</h3>
+      <p>FPS game inspired by Warzone, The Finals, and Lost Light. Featuring fast gameplay, modern design, and epic soundtracks.</p>
+      <a href="choice-of-light">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>The Hallways</h3>
+      <p>Psychological horror game based on endless looping hallways and creepy entities. Alpha version coming soon.</p>
+      <a href="the-hallways">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>Dynamic Rise™ Game Engine</h3>
+      <p>My own custom game engine made for both 2D and 3D games. Supports PC, Android, PS5, VR and more!</p>
+      <a href="dynamic-rise-engine">Learn More</a>
+    </div>
+    <div class="project-card">
+      <h3>OG Store</h3>
+      <p>A cloud-game platform like GeForce NOW, but better. Launch any game without downloading. Steam & Xbox integration included.</p>
+      <a href="og-store">Learn More</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="contact">Contact</a> •
+    <a href="terms-of-service">Terms of Service</a> •
+    <a href="privacy-policy">Privacy Policy</a> •
+    <a href="legal">Legal</a> •
+    <a href="api">API</a> •
+    <a href="open-source">Open Source</a> •
+    <a href="docs">Docs</a> •
+    <a href="donate">Donate</a>
+  </div>
+  &copy; 2025 PolandLet'sPlay. All rights reserved.
+  <div class="footer-links">
+    <!-- Your full list of icons like in the index file -->
+    <!-- Example: -->
+    <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" width="24" height="24"></a>
+    <!-- Add others here -->
+  </div>
+</footer>
+
+</body>
+</html>
