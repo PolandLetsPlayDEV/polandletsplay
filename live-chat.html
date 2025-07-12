@@ -110,7 +110,7 @@
 </head>
 <body>
 
-  <header>
+<header>
     <h1>Live Chat</h1>
     <p>A public Live Chat where everyone can chat :D</p>
   </header>
@@ -156,7 +156,15 @@
     const chatBox = document.getElementById("chat");
     const imageInput = document.getElementById("imageInput");
 
-    const badWordRegex = /(?:n[\W_]*[i1l!|]+[\W_]*[gq69]+[\W_]*[e3]+[\W_]*r+|f[\W_]*a[\W_]*g+|c[\W_]*u[\W_]*n[\W_]*t|r[\W_]*e[\W_]*t[\W_]*a[\W_]*r[\W_]*d|s[\W_]*l[\W_]*u[\W_]*t|b[\W_]*i[\W_]*t[\W_]*c[\W_]*h|s[\W_]*h[\W_]*i[\W_]*t|a[\W_]*s[\W_]*s[\W_]*h?[\W_]*o[\W_]*l[\W_]*e)/i;
+    const offensiveWords = ["asshole", "nigger", "bitch", "shit", "fag", "cunt", "retard", "slut"];
+    function obfuscateOffensiveWords(text) {
+      let safeText = text;
+      for (const word of offensiveWords) {
+        const pattern = new RegExp(word.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), "gi");
+        safeText = safeText.replace(pattern, '*'.repeat(word.length));
+      }
+      return safeText;
+    }
 
     window.sendMessage = () => {
       const name = document.getElementById("name").value.trim();
@@ -164,15 +172,11 @@
 
       if (!name || (!message && !imageInput.files[0])) return;
 
-      if (badWordRegex.test(message)) {
-        alert("⚠️ Inappropriate language is not allowed.");
-        return;
-      }
-
       if (message.startsWith('[sticker:')) {
-        // Optional: support stickers
         message = `<img src="stickers/${message.replace('[sticker:', '').replace(']', '')}.png" alt="sticker" class="chat-image">`;
       }
+
+      message = obfuscateOffensiveWords(message);
 
       const send = (imageURL = null) => {
         push(ref(db, "messages"), {
@@ -215,6 +219,7 @@
       chatBox.scrollTop = chatBox.scrollHeight;
     });
   </script>
+
 <footer>
   <div class="footer-links">
     <a href="contact">Contact</a> •
