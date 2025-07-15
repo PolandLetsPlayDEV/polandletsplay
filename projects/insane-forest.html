@@ -222,13 +222,53 @@
   </section>
 
   <section>
-    <h2>Join Private Playtests</h2>
-    <p>Want early access to new updates and content? Sign up below to join exclusive playtests.</p>
-    <form action="https://formspree.io/f/mexample" method="POST">
-      <input type="email" name="email" placeholder="Enter your email..." required />
-      <button type="submit" class="button">Sign Up</button>
-    </form>
-  </section>
+  <h2>Join Private Playtests</h2>
+  <p>Want early access to test <strong>Insane Forest</strong> before anyone else? Sign up below to become one of our official playtesters!</p>
+
+  <ul style="margin-bottom: 1rem; padding-left: 1.5rem; list-style: square;">
+    <li>Access to early builds before public release</li>
+    <li>Private Discord channels with the dev team</li>
+    <li>Help shape the game with feedback and bug reports</li>
+    <li>Get credited as an Alpha/Beta Tester in the final release</li>
+    <li>Possible exclusive in-game rewards</li>
+  </ul>
+
+  <p><strong>Upcoming Test Phases:</strong></p>
+  <ul style="margin-bottom: 1.5rem; padding-left: 1.5rem;">
+    <li><strong>Alpha 2:</strong> Current - Limited slots</li>
+    <li><strong>Beta 1:</strong> Planned for Fall 2026</li>
+    <li><strong>Full Launch:</strong> TBA – 2026</li>
+  </ul>
+
+  <form action="https://formspree.io/f/mexample" method="POST">
+    <input type="email" name="email" placeholder="Enter your email..." required /><br><br>
+
+    <label for="version">Which version would you like to test?</label><br>
+    <select name="version" id="version" required style="margin-top: 0.4rem; padding: 0.5rem; border-radius: 6px; border: none;">
+      <option value="android">Android (Mobile)</option>
+      <option value="web">Web Browser</option>
+      <option value="windows">Windows (PC)</option>
+      <option value="other">Other / Emulator</option>
+    </select><br><br>
+
+    <label for="msg">Why do you want to join?</label><br>
+    <textarea name="message" id="msg" placeholder="Tell us why you're excited to test the game..." rows="4" style="width: 100%; max-width: 500px; padding: 0.5rem; border-radius: 6px; border: none;"></textarea><br><br>
+
+    <label>
+      <input type="checkbox" name="consent" required>
+      I agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and understand that this is a private testing program.
+    </label><br><br>
+
+    <button type="submit" class="button">Apply to Playtest</button>
+  </form>
+
+  <hr style="margin: 2rem 0; border: 0.5px solid rgba(255,255,255,0.1);">
+
+  <p>Already part of the playtest group?</p>
+  <a href="https://discord.gg/JNzHHHaCfA" target="_blank" class="button">Join the Private Discord</a>
+  <a href="/contact" class="button">Contact Developer</a>
+</section>
+
 
 </div>
 
