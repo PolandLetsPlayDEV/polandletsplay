@@ -3,14 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>polandLet'sPlay - Projects - Insane Forest</title>
+  <title>PolandLet'sPlay - Projects - Insane Forest</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
       font-family: 'Outfit', sans-serif;
@@ -26,8 +22,7 @@
       content: "";
       position: fixed;
       top: 0; left: 0;
-      width: 100%;
-      height: 100%;
+      width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.8);
       z-index: -1;
     }
@@ -40,7 +35,6 @@
     .logo {
       max-width: 320px;
       height: auto;
-      margin: 0 auto;
     }
 
     header p {
@@ -107,8 +101,8 @@
 
     .platforms img {
       width: 36px;
-      margin-right: 10px;
-      filter: brightness(70%);
+      margin: 5px 10px 10px 0;
+      vertical-align: middle;
     }
 
     .button {
@@ -116,7 +110,7 @@
       background: #ff4e4e;
       color: #fff;
       padding: 0.7rem 1.5rem;
-      margin-top: 1rem;
+      margin: 0.5rem 0.5rem 0 0;
       text-decoration: none;
       border-radius: 8px;
       transition: 0.3s;
@@ -145,17 +139,25 @@
       color: #ff4e4e;
     }
 
+    input[type="email"] {
+      padding: 0.6rem;
+      width: 70%;
+      max-width: 300px;
+      border-radius: 6px;
+      border: none;
+      margin-right: 0.5rem;
+      font-size: 1rem;
+    }
+
     @media (max-width: 600px) {
-      .logo {
-        max-width: 220px;
-      }
+      .logo { max-width: 220px; }
 
-      nav {
-        flex-direction: column;
-      }
+      nav { flex-direction: column; }
+      nav a { margin: 0.3rem 0; }
 
-      nav a {
-        margin: 0.3rem 0;
+      input[type="email"] {
+        width: 100%;
+        margin: 0 0 1rem 0;
       }
     }
   </style>
@@ -164,67 +166,68 @@
 
 <header>
   <img src="https://ucarecdn.com/e088b1bc-0cba-4e7f-a627-d5fdf59dddfa/insaneforest_logo.png" alt="Insane Forest Logo" class="logo">
-  <p>A Survival Horror Game Made by PolandLet'sPlay</p>
+  <p>A Survival Horror Game by PolandLet'sPlay</p>
 </header>
 
 <nav>
-    <a href="index">Home Page</a>
-    <a href="live-chat">Live Chat</a>
-    <a href="about-me">About Me</a>
-    <a href="projects">Projects</a>
-    <a href="prisma3d-models">Prisma3D Models</a>
-    <a href="contact">Contact</a>
-    <a href="behind-the-scense">Behind the Scenes</a>
-  </nav>
+  <a href="/index">Home Page</a>
+  <a href="/live-chat">Live Chat</a>
+  <a href="/about-me">About Me</a>
+  <a href="/projects">Projects</a>
+  <a href="/prisma3d-models">Prisma3D Models</a>
+  <a href="/contact">Contact</a>
+  <a href="/behind-the-scenes">Behind the Scenes</a>
+</nav>
 
 <div class="container">
 
   <section>
     <h2>The Story</h2>
-    <p>
-      In the late 70s, a man began creating unique dummies for clothing stores—dummies that moved. They were a success until strange behaviors began: security guards vanished, reports of movement at night… Then he was arrested, and the production was shut down.
-    </p>
-    <p>
-      Months later, a transport vehicle went missing in a forest. The wreckage was found. No driver. No dummies. Rumors spread of <span class="highlight">Skinwalkers</span>. Now, in the 2000s, you run out of fuel while driving at night. Trapped in the forest, the horror begins again.
-    </p>
+    <p>In the late 70s, a man developed robotic dummies for clothing stores. At first, they were revolutionary. But strange events followed—security guards disappeared, and the dummies started moving on their own. After the creator was arrested, production stopped.</p>
+    <p>Years later, a transport vehicle carrying the remaining dummies crashed in a forest. The wreckage was found—but no dummies, no driver. Locals whisper about <span class="highlight">Skinwalkers</span>. In the 2000s, you run out of fuel near that same forest. The nightmare begins again...</p>
   </section>
 
   <section>
     <h2>Platforms</h2>
     <div class="platforms">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android">
+      <a href="#"><img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="Android" title="Android"></a>
     </div>
-    <p><em>Currently Android-only. Web version in development. Emulator support allowed.</em></p>
+    <p><em>Currently available on Android. Web version is in development. Emulator support is allowed.</em></p>
   </section>
 
-<section>
+  <section>
     <h2>Stores</h2>
     <div class="platforms">
-      <img src="https://cdn-icons-png.flaticon.com/512/888/888857.png" alt="itch.io">
-      <img src="https://cdn-icons-png.flaticon.com/512/732/732228.png" alt="Gamejolt">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="RuStore">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="Isotopic Store">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="IndieDB">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="TapTap">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="APKPure">
-      <img src="https://cdn-icons-png.flaticon.com/512/5968/5968705.png" alt="apk.com">
+      <a href="https://polandplaydev.itch.io/insane-forest" target="_blank"><img src="https://upload.wikimedia.org/wikipedia/commons/6/69/Itch.io_logo.svg" alt="itch.io" title="itch.io" width="40"></a>
+      <a href="https://gamejolt.com/@PolandLetsPlay" target="_blank"><img src="https://static-00.iconduck.com/assets.00/gamejolt-icon-512x512-sqm0h7g2.png" alt="GameJolt" title="GameJolt" width="40"></a>
+      <a href="https://apkpure.com" target="_blank"><img src="https://seeklogo.com/images/A/apkpure-logo-FD22853F77-seeklogo.com.png" alt="APKPure" title="APKPure" width="40"></a>
+      <!-- Add more as needed -->
     </div>
-  </section>
-  
-  <section>
-    <h2>Development :D</h2>
-    <p><strong>March 28, 2024</strong> — The day the forest’s madness began development on the IT'sMagic Engine™.</p>
   </section>
 
   <section>
-    <h2>Give a review</h2>
-    <p>Make sure to give an review, that will help us a lot in improving the game.</p>
-    <a href="IGDB" class="button">IGDB</a>
-    <a href="Grouvee" class="button">Grouvee</a>
-    <a href="Kotaku" class="button">Kotaku</a>
-    <a href="Fuze" class="button">Fuze</a>
-    <a href="Questlog" class="button">Questlog</a>
-    <a href="Stash Games" class="button">Stash Games</a>
+    <h2>Development</h2>
+    <p><strong>Started:</strong> March 28, 2024 — Developed using the IT'sMagic Engine™.</p>
+  </section>
+
+  <section>
+    <h2>Give a Review</h2>
+    <p>We’d love to hear your thoughts! Leave a review and help shape the future of Insane Forest.</p>
+    <a href="https://www.igdb.com/" class="button" target="_blank">IGDB</a>
+    <a href="https://www.grouvee.com/" class="button" target="_blank">Grouvee</a>
+    <a href="https://kotaku.com/" class="button" target="_blank">Kotaku</a>
+    <a href="https://fuze.io/" class="button" target="_blank">Fuze</a>
+    <a href="https://questlog.games/" class="button" target="_blank">Questlog</a>
+    <a href="https://stash.games/" class="button" target="_blank">Stash Games</a>
+  </section>
+
+  <section>
+    <h2>Join Private Playtests</h2>
+    <p>Want early access to new updates and content? Sign up below to join exclusive playtests.</p>
+    <form action="https://formspree.io/f/mexample" method="POST">
+      <input type="email" name="email" placeholder="Enter your email..." required />
+      <button type="submit" class="button">Sign Up</button>
+    </form>
   </section>
 
 </div>
