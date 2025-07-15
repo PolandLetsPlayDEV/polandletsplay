@@ -305,8 +305,25 @@
     <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
   </div>
 </footer>
-</body>
-</html>
+<script>
+  (function() {
+    const isGitHub = window.location.hostname.includes("github.io");
+    const prefix = isGitHub ? "/polandletsplay" : "";
+
+    document.querySelectorAll("nav a, .footer-links a, a.button").forEach(link => {
+      const href = link.getAttribute("href");
+      if (
+        href &&
+        !href.startsWith("http") &&
+        !href.startsWith("#") &&
+        !href.includes("mailto:") &&
+        !href.includes("javascript:")
+      ) {
+        link.setAttribute("href", prefix + "/" + href.replace(/^\/+/, ""));
+      }
+    });
+  })();
+</script>
 
 </body>
 </html>
