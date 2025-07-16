@@ -263,9 +263,9 @@
     <textarea name="message" id="msg" placeholder="Tell us why you're excited to test the game..." rows="4" style="width: 100%; max-width: 500px; padding: 0.5rem; border-radius: 6px; border: none;"></textarea><br><br>
 
     <label>
-      <input type="checkbox" name="consent" required>
-      I agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a> and understand that this is a private testing program.
-    </label><br><br>
+  <input type="checkbox" name="consent" required>
+  I agree to the <a href="/privacy-policy" target="_blank">Privacy Policy</a>
+</label>
 
     <button type="submit" class="button">Apply to Playtest</button>
   </form>
@@ -309,22 +309,22 @@
 </footer>
 <script>
   (function() {
-    const isGitHub = window.location.hostname.includes("github.io");
-    const prefix = isGitHub ? "/polandletsplay" : "";
+  const isGitHub = window.location.hostname.includes("github.io");
+  const prefix = isGitHub ? "/polandletsplay" : "";
 
-    document.querySelectorAll("nav a, .footer-links a, a.button").forEach(link => {
-      const href = link.getAttribute("href");
-      if (
-        href &&
-        !href.startsWith("http") &&
-        !href.startsWith("#") &&
-        !href.includes("mailto:") &&
-        !href.includes("javascript:")
-      ) {
-        link.setAttribute("href", prefix + "/" + href.replace(/^\/+/, ""));
-      }
-    });
-  })();
+  document.querySelectorAll("a[href]").forEach(link => {
+    const href = link.getAttribute("href");
+    if (
+      href &&
+      !href.startsWith("http") &&
+      !href.startsWith("#") &&
+      !href.includes("mailto:") &&
+      !href.includes("javascript:")
+    ) {
+      link.setAttribute("href", prefix + "/" + href.replace(/^\/+/, ""));
+    }
+  });
+})();
 </script>
 
 </body>
