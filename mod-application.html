@@ -1,110 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>PolandLet'sPlay – Mod Application</title>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Submit Your File</title>
   <style>
-    /* Keep your original CSS from before — omitted here for brevity */
-    /* But add a few more specific styles for the form: */
-    form {
+    body {
+      font-family: Arial, sans-serif;
+      background: #111;
+      color: #eee;
       display: flex;
-      flex-direction: column;
-      gap: 1rem;
-      background: #1a1a1a;
-      padding: 2rem;
-      border-radius: 10px;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
     }
-
-    input, textarea, select {
-      padding: 0.7rem;
+    form {
+      background: #222;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      width: 100%;
+      max-width: 400px;
+    }
+    input, button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
       border: none;
       border-radius: 5px;
-      background: #2c2c2c;
+    }
+    input[type="text"],
+    input[type="email"] {
+      background: #333;
       color: #fff;
     }
-
-    input:focus, textarea:focus, select:focus {
-      outline: 2px solid #8f94fb;
+    input[type="file"] {
+      background: #333;
+      color: #fff;
     }
-
     button {
-      padding: 0.8rem;
-      background: #8f94fb;
-      color: #0f0f0f;
-      border: none;
-      border-radius: 5px;
+      background-color: orange;
+      color: #111;
       font-weight: bold;
       cursor: pointer;
-      transition: background 0.3s;
     }
-
     button:hover {
-      background: #6e73d9;
+      background-color: #ff9900;
     }
   </style>
 </head>
 <body>
-
-  <header>
-    <h1>Mod Application</h1>
-    <p>Apply to become a Moderator for the PolandLet'sPlay Community</p>
-  </header>
-
-  <nav>
-    <a href="index">Home Page</a>
-    <a href="live-chat">Live Chat</a>
-    <a href="about-me">About Me</a>
-    <a href="projects">Projects</a>
-    <a href="contact">Contact</a>
-  </nav>
-
-  <div class="container">
-    <section>
-      <h2>Apply Now</h2>
-      <form action="https://usebasin.com/f/your-form-id" method="POST">
-        <label>
-          Your Name:
-          <input type="text" name="name" required />
-        </label>
-
-        <label>
-          Your Email:
-          <input type="email" name="email" required />
-        </label>
-
-        <label>
-          Discord Username (e.g. name#1234):
-          <input type="text" name="discord" required />
-        </label>
-
-        <label>
-          Why do you want to be a mod?
-          <textarea name="why" rows="5" required></textarea>
-        </label>
-
-        <label>
-          How often are you active in the community?
-          <select name="activity" required>
-            <option value="">Select one</option>
-            <option value="daily">Daily</option>
-            <option value="weekly">A few times a week</option>
-            <option value="rarely">Rarely</option>
-          </select>
-        </label>
-
-        <label>
-          Anything else you’d like to say?
-          <textarea name="extra" rows="4"></textarea>
-        </label>
-
-        <button type="submit">Submit Application</button>
-      </form>
-    </section>
-  </div>
-
-  <!-- Footer remains unchanged -->
-  <!-- Keep your full footer from the original code -->
+  <form action="https://getform.io/f/your-form-endpoint" method="POST" enctype="multipart/form-data">
+    <h2>Upload Your File</h2>
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <input type="file" name="file" required>
+    <button type="submit">Submit</button>
+  </form>
 </body>
 </html>
