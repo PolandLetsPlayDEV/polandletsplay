@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>PolandLet'sPlay – Contact</title>
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <script src="https://uploadthing.com/client/script.js" defer></script>
   <style>
     * { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -161,23 +162,24 @@
 </header>
 
 <nav>
-    <a href="index">Home Page</a>
-    <a href="live-chat">Live Chat</a>
-    <a href="about-me">About Me</a>
-    <a href="projects">Projects</a>
-    <a href="prisma3d-models">Prisma3D Models</a>
-    <a href="contact">Contact</a>
-    <a href="behind-the-scense">Behind the Scenes</a>
-  </nav>
+  <a href="index">Home Page</a>
+  <a href="live-chat">Live Chat</a>
+  <a href="about-me">About Me</a>
+  <a href="projects">Projects</a>
+  <a href="prisma3d-models">Prisma3D Models</a>
+  <a href="contact">Contact</a>
+  <a href="behind-the-scense">Behind the Scenes</a>
+</nav>
 
 <div class="container">
   <h2>Send Me a Message</h2>
-  <form action="https://getform.io/f/akknljwa" method="POST" enctype="multipart/form-data">
+  <form method="POST">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
 
-        <label for="topic">What is your message about?</label>
+    <label for="topic">What is your message about?</label>
     <select name="topic" required>
+      <select name="topic" required>
       <optgroup label="In-Game">
         <option>Lag Issues</option>
         <option>FPS Drops</option>
@@ -251,11 +253,12 @@
         <option>Other Inquiry</option>
       </optgroup>
     </select>
+    </select>
 
     <textarea name="message" rows="6" placeholder="Write your full message here..." required></textarea>
 
     <label for="file">Attach files (PDFs, videos, screenshots, ZIPs, anything):</label>
-    <input type="file" name="attachments" multiple accept="*/*">
+    <div data-uploadthing-chooser data-ut-api-key="a1013de4-01b7-4a67-83f2-3a7c012f08cc"></div>
 
     <div class="agreement">
       <label>
