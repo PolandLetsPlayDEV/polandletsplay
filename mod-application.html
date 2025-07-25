@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Submit Your File</title>
+  <title>File Upload Form</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      background: #111;
-      color: #eee;
+      background-color: #1a1a1a;
+      color: #f1f1f1;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -16,47 +16,56 @@
       margin: 0;
     }
     form {
-      background: #222;
+      background-color: #2a2a2a;
       padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(255, 165, 0, 0.5);
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(255, 140, 0, 0.2);
       width: 100%;
       max-width: 400px;
     }
     input, button {
+      display: block;
       width: 100%;
       padding: 10px;
-      margin-top: 10px;
+      margin-top: 15px;
+      border-radius: 8px;
       border: none;
-      border-radius: 5px;
+      font-size: 16px;
     }
     input[type="text"],
     input[type="email"] {
-      background: #333;
-      color: #fff;
+      background-color: #444;
+      color: white;
     }
     input[type="file"] {
-      background: #333;
-      color: #fff;
+      background-color: #333;
+      color: #ddd;
     }
     button {
       background-color: orange;
-      color: #111;
+      color: black;
       font-weight: bold;
       cursor: pointer;
+      transition: background-color 0.3s ease;
     }
     button:hover {
-      background-color: #ff9900;
+      background-color: #ff8c00;
     }
   </style>
 </head>
 <body>
+
   <form action="https://getform.io/f/your-form-endpoint" method="POST" enctype="multipart/form-data">
-    <h2>Upload Your File</h2>
+    <h2>Submit Your File</h2>
+
     <input type="text" name="name" placeholder="Your Name" required>
+
     <input type="email" name="email" placeholder="Your Email" required>
+
     <input type="file" name="file" required>
-    <button type="submit">Submit</button>
+
+    <button type="submit">Send File</button>
   </form>
+
 </body>
 </html>
