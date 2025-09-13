@@ -173,7 +173,8 @@
 
 <div class="container">
   <h2>Send Me a Message</h2>
-  <form method="POST">
+  <!-- FormBackend endpoint -->
+  <form method="POST" action="https://www.formbackend.com/f/6f8f9a23d62ba1d9" enctype="multipart/form-data">
     <input type="text" name="name" placeholder="Your Name" required>
     <input type="email" name="email" placeholder="Your Email" required>
 
@@ -255,8 +256,21 @@
 
     <textarea name="message" rows="6" placeholder="Write your full message here..." required></textarea>
 
-    <label for="file">Attach files (PDFs, videos, screenshots, ZIPs, anything):</label>
-    <div data-uploadthing-chooser data-ut-api-key="a1013de4-01b7-4a67-83f2-3a7c012f08cc"></div>
+    <!-- Drag & Drop File Upload -->
+    <label for="fileElem">Attach files (PDFs, screenshots, ZIPs, etc.):</label>
+    <div id="drop-area" style="border: 2px dashed #555; padding: 20px; text-align: center; margin-bottom: 1rem;">
+      <p>Drag & drop files here or <label style="color: #8f94fb; text-decoration: underline; cursor: pointer;">
+          <input type="file" id="fileElem" name="file" multiple style="display:none">
+          browse your device
+      </label></p>
+      <div id="file-list" style="font-size: 0.9rem; color: #bbb;"></div>
+    </div>
+
+    <!-- Disclaimer -->
+    <p style="font-size: 0.85rem; color: #bbb; margin-top: -10px; margin-bottom: 15px;">
+      ⚠️ Max file size per upload: <strong>5MB</strong>. If your file is larger, please include a
+      <strong>Google Drive / Mega / Dropbox link</strong> in your message.
+    </p>
 
     <div class="agreement">
       <label>
@@ -273,6 +287,44 @@
     <button type="submit">Send</button>
   </form>
 </div>
+
+<script>
+  const dropArea = document.getElementById('drop-area');
+  const fileInput = document.getElementById('fileElem');
+  const fileList = document.getElementById('file-list');
+
+  ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+    dropArea.addEventListener(eventName, preventDefaults, false);
+  });
+
+  function preventDefaults(e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+
+  dropArea.addEventListener('drop', handleDrop, false);
+
+  function handleDrop(e) {
+    const dt = e.dataTransfer;
+    const files = dt.files;
+    fileInput.files = files; // attach to hidden input so FormBackend receives them
+    handleFiles(files);
+  }
+
+  fileInput.addEventListener('change', () => {
+    handleFiles(fileInput.files);
+  });
+
+  function handleFiles(files) {
+    fileList.innerHTML = '';
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      const li = document.createElement('div');
+      li.textContent = file.name + ' (' + Math.round(file.size / 1024) + ' KB)';
+      fileList.appendChild(li);
+    }
+  }
+</script>
 
 <footer>
   <div class="footer-links">
