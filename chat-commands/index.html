@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolandLet'sPlay – Chat Commands</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+    }
+
+    header p {
+      color: #eee;
+      font-size: 1.1rem;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: auto;
+      padding: 2rem;
+    }
+
+    h2 {
+      color: #8f94fb;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 3rem;
+      background: #151515;
+      border-radius: 15px;
+      overflow: hidden;
+    }
+
+    th, td {
+      padding: 1rem;
+      text-align: left;
+    }
+
+    th {
+      background: #1f1f1f;
+      color: #8f94fb;
+      font-weight: 700;
+    }
+
+    tr:nth-child(even) {
+      background: #1a1a1a;
+    }
+
+    .play-btn {
+      background: #8f94fb;
+      color: #0f0f0f;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: 700;
+      transition: 0.2s;
+    }
+
+    .play-btn:hover {
+      opacity: 0.85;
+    }
+
+    .gif {
+      width: 60px;
+      border-radius: 8px;
+    }
+
+    .socials {
+      margin-top: 1rem;
+    }
+
+    .socials a {
+      margin-right: 1rem;
+      display: inline-block;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 3rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Chat Commands</h1>
+  <p>Stuff you can spam in chat (yes, it’s allowed :D)</p>
+</header>
+
+<nav>
+    <a href="index">Home Page</a>
+    <a href="chat-commands">Chat Commands</a>
+    <a href="about-me">About Me</a>
+    <a href="projects">Projects</a>
+    <a href="prisma3d-models">Prisma3D Models</a>
+    <a href="contact">Contact</a>
+    <a href="behind-the-scense">Behind the Scenes</a>
+  </nav>
+
+<div class="container">
+
+  <!-- SOUND COMMANDS -->
+  <section>
+    <h2>Sound Commands</h2>
+
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>Preview</th>
+        <th>GIF</th>
+      </tr>
+
+      <tr>
+        <td><strong>!67</strong></td>
+        <td><button class="play-btn" onclick="playSound('67')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/67.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!boom
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('boom')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/boom.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!congrats
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('congrats')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/congrats.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!falling-bee
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('falling-bee')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/falling-bee.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!falling-kirby
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('falling-kirby')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/falling-kirby.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!foxy-jumpscare
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('foxy-jumpscare')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/foxy-jumpscare.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!hahahahahah
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('hahahahahah')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/hahahahahah.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!helo
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('helo')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/helo.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!MEEE
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('MEEE')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/MEEE.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!mini-soda
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('mini-soda')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/mini-soda.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!nah-uh
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('nah-uh')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/nah-uh.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!ohhhhhhhhh
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('ohhhhhhhhh')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/ohhhhhhhhh.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!roman-are-you-slepping
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('roman-are-you-slepping')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/roman-are-you-slepping.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!shimmy-ya
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('shimmy-ya')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/shimmy-ya.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!so-sad
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('so-sad')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/so-sad.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!spinning-fish
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('spinning-fish')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/spinning-fish.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!um-excuse-me-what-the-actual-fuck-you-doing-in-my-house
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('um-excuse-me-what-the-actual-fuck-you-doing-in-my-house')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/um-excuse-me-what-the-actual-fuck-you-doing-in-my-house.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!yee
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('yee')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/yee.gif"></td>
+      </tr>
+
+      <tr>
+        <td><strong>!you-stupid
+        </strong></td>
+        <td><button class="play-btn" onclick="playSound('you-stupid')">Play SFX</button></td>
+        <td><img class="gif" src="assets/chat-commands/gif/you-stupid.gif"></td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- MODIFIERS -->
+  <section>
+    <h2>Sound Modifiers</h2>
+
+    <table>
+      <tr>
+        <th>Modifier</th>
+        <th>What it does</th>
+      </tr>
+
+      <tr>
+        <td><strong>+bass</strong></td>
+        <td>Makes the sound louder and bass boosted 💀</td>
+      </tr>
+
+      <tr>
+        <td><strong>+pitchup</strong></td>
+        <td>Pitches the sound up (chipmunk mode)</td>
+      </tr>
+
+      <tr>
+        <td><strong>+pitchdown</strong></td>
+        <td>Pitches the sound down (demonic vibes)</td>
+      </tr>
+    </table>
+  </section>
+
+  <!-- UTILITY -->
+  <section>
+    <h2>Utility Commands</h2>
+
+    <table>
+      <tr>
+        <th>Command</th>
+        <th>Description</th>
+      </tr>
+
+      <tr>
+        <td><strong>!discord</strong></td>
+        <td>Sends the Discord server link</td>
+      </tr>
+
+      <tr>
+        <td><strong>!drops</strong></td>
+        <td>Confirms Twitch Drops are enabled</td>
+      </tr>
+
+      <tr>
+        <td><strong>!giveaway</strong></td>
+        <td>Enter an active giveaway (if running)</td>
+      </tr>
+    </table>
+  </section>
+
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="contact">Contact</a> •
+    <a href="terms-of-service">Terms of Service</a> •
+    <a href="privacy-policy">Privacy Policy</a> •
+    <a href="legal">Legal</a> •
+    <a href="api">API</a> •
+    <a href="open-source">Open Source</a> •
+    <a href="docs">Docs</a> •
+    <a href="donate">Donate</a> •
+    <a href="dmca">DMCA</a> •
+    <a href="changelog">Changelog</a> •
+    <a href="media-kit">Media Kit</a> •
+    <a href="faq">FAQ</a>
+  </div>
+  &copy; 2025 - 2026 PolandLet'sPlay. All rights reserved.
+  <div class="footer-links">
+    <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="YouTube" width="24" height="24"></a>
+    <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://ucarecdn.com/56ac225b-c41b-4fb8-a58f-32513acf1f19/youtube_music_white_icon.png" alt="YouTube Music" width="20" height="20"></a>
+    <a href="https://vk.com/id1037402223" target="_blank"><img src="https://ucarecdn.com/b6cee55b-8694-459d-a148-ce12d5869bf1/vk_white_icon.png" alt="VK" width="24" height="24"></a>
+    <a href="https://id.embark.games/id/the-finals/refer-a-friend/claim?code=KFBINS3CH-2C4KLCUPP-LBMIOOD4" target="_blank"><img src="https://ucarecdn.com/8e862d9e-7246-4cac-b5ca-b1339c50c1ef/embark_id_white_icon.png" alt="Embark ID" width="24" height="24"></a>
+    <a href="https://discord.gg/JNzHHHaCfA" target="_blank"><img src="https://ucarecdn.com/cadbcc53-baa0-44c6-8c69-2f29266050c8/discord_white_icon.png" alt="Discord" width="24" height="24"></a>
+    <a href="https://tiktok.com/@polandletsplay__" target="_blank"><img src="https://ucarecdn.com/99e45cd3-3473-433a-94e1-9c4b534038c1/tiktok_white_icon.png" alt="TikTok" width="24" height="24"></a>
+    <a href="https://pinterest.com/PolandLetsPlay__" target="_blank"><img src="https://ucarecdn.com/84b3fc11-e2cc-4131-88a4-2df119c000ea/pinterest_white_icon.png" alt="Pinterest" width="28" height="28"></a>
+    <a href="https://steamcommunity.com/id/nendofrek555" target="_blank"><img src="https://ucarecdn.com/39e39f70-94a6-47d5-acbe-3581eb6e6f5c/steam_white_icon.png" alt="Steam" width="24" height="24"></a>
+    <a href="https://www.twitch.tv/polandletsplay_" target="_blank"><img src="https://ucarecdn.com/3efb7044-51e5-46b0-b290-c87a3f2a7066/twitch_white_icon.png" alt="Twitch" width="24" height="24"></a>
+    <a href="https://x.com/polandplayDEV" target="_blank"><img src="https://ucarecdn.com/04ac0e42-fd90-4c09-8a55-3753604d3a5c/x_white_icon.png" alt="X" width="24" height="24"></a>
+    <a href="https://www.xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank"><img src="https://ucarecdn.com/8ba62469-b901-40f5-9a2b-021efacd45d5/xbox_white_icon.png" alt="Xbox" width="30" height="30"></a>
+    <a href="https://faceit.com/pl/players/PolandLetsTV" target="_blank"><img src="https://ucarecdn.com/907b9277-6197-491c-accb-78353a9162d5/faceit_white_icon.png" alt="FACEIT" width="24" height="24"></a>
+    <a href="https://github.com/PolandLetsPlayDEV" target="_blank"><img src="https://ucarecdn.com/bd4f2eef-e208-4a03-8ec3-bff3335bc763/github_white_icon.png" alt="GitHub" width="24" height="24"></a>
+    <a href="https://polandplaydev.itch.io/" target="_blank"><img src="https://ucarecdn.com/b4b893b6-8089-49d4-93d9-bef55776ad7e/itchio_white_icon.png" alt="itch.io" width="24" height="24"></a>
+    <a href="https://gamejolt.com/@PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/5573895b-adf2-439b-8871-902f995c430a/gamejolt_white_icon.png" alt="GameJolt" width="24" height="24"></a>
+    <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/c634096d-20a4-4737-8450-a9ac5aee3f3c/linktree_white_icon.png" alt="Linktree" width="35" height="35"></a>
+    <a href="https://www.leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://ucarecdn.com/99d53c88-3da4-4274-bd56-bc197c9abe84/leadwerks_white_icon.png" alt="Leadwerks" width="24" height="24"></a>
+    <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
+  </div>
+</footer>
+
+
+<!-- AUDIO -->
+<audio id="67" src="assets\chat-commands\sfx\67.WAV"></audio>
+<audio id="boom" src="assets\chat-commands\sfx\boom.WAV"></audio>
+<audio id="congrats" src="assets\chat-commands\sfx\congrats.WAV"></audio>
+<audio id="falling-bee" src="assets\chat-commands\sfx\falling-bee.WAV"></audio>
+<audio id="falling-kirby" src="assets\chat-commands\sfx\falling-kirby.WAV"></audio>
+<audio id="foxy-jumpscare" src="assets\chat-commands\sfx\foxy-jumpscare.WAV"></audio>
+<audio id="hahahahahah" src="assets\chat-commands\sfx\hahahahahah.WAV"></audio>
+<audio id="helo" src="assets\chat-commands\sfx\helo.WAV"></audio>
+<audio id="MEEE" src="assets\chat-commands\sfx\MEEE.WAV"></audio>
+<audio id="mini-soda" src="assets\chat-commands\sfx\mini-soda.WAV"></audio>
+<audio id="nah-uh" src="assets\chat-commands\sfx\nah-uh.WAV"></audio>
+<audio id="ohhhhhhhhh" src="assets\chat-commands\sfx\ohhhhhhhhh.WAV"></audio>
+<audio id="roman-are-you-slepping" src="assets\chat-commands\sfx\roman-are-you-slepping.WAV"></audio>
+<audio id="shimmy-ya" src="assets\chat-commands\sfx\shimmy-ya.WAV"></audio>
+<audio id="so-sad" src="assets\chat-commands\sfx\so-sad.WAV"></audio>
+<audio id="spinning-fish" src="assets\chat-commands\sfx\spinning-fish.WAV"></audio>
+<audio id="um-excuse-me-what-the-actual-fuck-you-doing-in-my-house" src="assets\chat-commands\sfx\um-excuse-me-what-the-actual-fuck-you-doing-in-my-house.WAV"></audio>
+<audio id="yee" src="assets\chat-commands\sfx\yee.WAV"></audio>
+<audio id="you-stupid" src="assets\chat-commands\sfx\you-stupid.WAV"></audio>
+
+<script>
+  function playSound(id) {
+    const audio = document.getElementById(id);
+    if (!audio) return;
+    audio.currentTime = 0;
+    audio.play();
+  }
+</script>
+
+</body>
+</html>
