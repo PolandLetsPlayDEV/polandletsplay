@@ -1,1 +1,239 @@
-index
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolandLet'sPlay – Mod Application</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #8f94fb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #8f94fb;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: #1c1c1c;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      background: #2c2c2c;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #8f94fb;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    .agreement {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .agreement label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 3rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 2rem;
+      }
+
+      .container {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Mod Application</h1>
+  <p>Apply to become a moderator for PolandLet'sPlay Community</p>
+</header>
+
+<nav>
+  <a href="index">Home Page</a>
+  <a href="live-chat">Live Chat</a>
+  <a href="about-me">About Me</a>
+  <a href="projects">Projects</a>
+  <a href="prisma3d-models">Prisma3D Models</a>
+  <a href="contact">Contact</a>
+  <a href="behind-the-scense">Behind the Scenes</a>
+</nav>
+
+<div class="container">
+  <h2>Apply Now</h2>
+  <form action="https://submit-form.com/FxQ6HLTUI" method="POST" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your Full Name" required>
+    <input type="email" name="email" placeholder="Your Email Address" required>
+    <input type="text" name="discord" placeholder="Your Discord Username (e.g. User#1234)" required>
+
+    <label for="reason">Why do you want to become a moderator?</label>
+    <textarea name="reason" rows="6" placeholder="Write your answer here..." required></textarea>
+
+    <div class="agreement">
+      <label>
+        <input type="checkbox" id="agree" required>
+        <span>
+          I agree to the
+          <a href="terms-of-service" target="_blank">Terms</a>,
+          <a href="privacy-policy" target="_blank">Privacy Policy</a>,
+          and <a href="legal" target="_blank">Legal Notice</a>.
+        </span>
+      </label>
+    </div>
+
+    <button type="submit">Submit Application</button>
+  </form>
+</div>
+
+<footer>
+  <div class="footer-links">
+    <a href="contact">Contact</a> •
+    <a href="terms-of-service">Terms of Service</a> •
+    <a href="privacy-policy">Privacy Policy</a> •
+    <a href="legal">Legal</a> •
+    <a href="api">API</a> •
+    <a href="open-source">Open Source</a> •
+    <a href="docs">Docs</a> •
+    <a href="donate">Donate</a> •
+    <a href="dmca">DMCA</a> •
+    <a href="changelog">Changelog</a> •
+    <a href="media-kit">Media Kit</a> •
+    <a href="faq">FAQ</a>
+  </div>
+  &copy; 2025 - 2026 PolandLet'sPlay. All rights reserved.
+  <div class="footer-links">
+    <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://ucarecdn.com/f8334591-02cb-4f4f-a524-090126dfbfbc/youtube_white_icon.png" alt="YouTube" width="24" height="24"></a>
+    <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://ucarecdn.com/56ac225b-c41b-4fb8-a58f-32513acf1f19/youtube_music_white_icon.png" alt="YouTube Music" width="20" height="20"></a>
+    <a href="https://vk.com/id1037402223" target="_blank"><img src="https://ucarecdn.com/b6cee55b-8694-459d-a148-ce12d5869bf1/vk_white_icon.png" alt="VK" width="24" height="24"></a>
+    <a href="https://id.embark.games/id/the-finals/refer-a-friend/claim?code=KFBINS3CH-2C4KLCUPP-LBMIOOD4" target="_blank"><img src="https://ucarecdn.com/8e862d9e-7246-4cac-b5ca-b1339c50c1ef/embark_id_white_icon.png" alt="Embark ID" width="24" height="24"></a>
+    <a href="https://discord.gg/JNzHHHaCfA" target="_blank"><img src="https://ucarecdn.com/cadbcc53-baa0-44c6-8c69-2f29266050c8/discord_white_icon.png" alt="Discord" width="24" height="24"></a>
+    <a href="https://tiktok.com/@polandletsplay__" target="_blank"><img src="https://ucarecdn.com/99e45cd3-3473-433a-94e1-9c4b534038c1/tiktok_white_icon.png" alt="TikTok" width="24" height="24"></a>
+    <a href="https://pinterest.com/PolandLetsPlay__" target="_blank"><img src="https://ucarecdn.com/84b3fc11-e2cc-4131-88a4-2df119c000ea/pinterest_white_icon.png" alt="Pinterest" width="28" height="28"></a>
+    <a href="https://steamcommunity.com/id/nendofrek555" target="_blank"><img src="https://ucarecdn.com/39e39f70-94a6-47d5-acbe-3581eb6e6f5c/steam_white_icon.png" alt="Steam" width="24" height="24"></a>
+    <a href="https://www.twitch.tv/polandletsplay_" target="_blank"><img src="https://ucarecdn.com/3efb7044-51e5-46b0-b290-c87a3f2a7066/twitch_white_icon.png" alt="Twitch" width="24" height="24"></a>
+    <a href="https://x.com/polandplayDEV" target="_blank"><img src="https://ucarecdn.com/04ac0e42-fd90-4c09-8a55-3753604d3a5c/x_white_icon.png" alt="X" width="24" height="24"></a>
+    <a href="https://www.xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank"><img src="https://ucarecdn.com/8ba62469-b901-40f5-9a2b-021efacd45d5/xbox_white_icon.png" alt="Xbox" width="30" height="30"></a>
+    <a href="https://faceit.com/pl/players/PolandLetsTV" target="_blank"><img src="https://ucarecdn.com/907b9277-6197-491c-accb-78353a9162d5/faceit_white_icon.png" alt="FACEIT" width="24" height="24"></a>
+    <a href="https://github.com/PolandLetsPlayDEV" target="_blank"><img src="https://ucarecdn.com/bd4f2eef-e208-4a03-8ec3-bff3335bc763/github_white_icon.png" alt="GitHub" width="24" height="24"></a>
+    <a href="https://polandplaydev.itch.io/" target="_blank"><img src="https://ucarecdn.com/b4b893b6-8089-49d4-93d9-bef55776ad7e/itchio_white_icon.png" alt="itch.io" width="24" height="24"></a>
+    <a href="https://gamejolt.com/@PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/5573895b-adf2-439b-8871-902f995c430a/gamejolt_white_icon.png" alt="GameJolt" width="24" height="24"></a>
+    <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://ucarecdn.com/c634096d-20a4-4737-8450-a9ac5aee3f3c/linktree_white_icon.png" alt="Linktree" width="35" height="35"></a>
+    <a href="https://www.leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://ucarecdn.com/99d53c88-3da4-4274-bd56-bc197c9abe84/leadwerks_white_icon.png" alt="Leadwerks" width="24" height="24"></a>
+    <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://ucarecdn.com/8f446749-3305-4eb1-bcbc-5559db8e3efe/sketchfab_white_icon.png" alt="Sketchfab" width="24" height="24"></a>
+  </div>
+</footer>
+</body>
+</html>
