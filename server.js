@@ -5,14 +5,14 @@ const path = require("path");
 const app = express();
 const PORT = 3000;
 
-// Serve your website
+// Serve website files
 app.use(express.static(__dirname));
 
 const server = app.listen(PORT, () => {
   console.log(`Server running at http://localhost:${PORT}`);
 });
 
-// WebSocket
+// WebSocket server
 const wss = new WebSocket.Server({ server });
 
 wss.on("connection", (ws) => {
