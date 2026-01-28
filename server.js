@@ -1,16 +1,14 @@
-const express = require("express");
 const WebSocket = require("ws");
-const path = require("path");
+const express = require("express");
 
 const app = express();
-const server = app.listen(3000, () => {
-  console.log("Server running on http://localhost:3000");
-});
-
+const server = app.listen(3000);
 const wss = new WebSocket.Server({ server });
 
-// COMMAND LIST
-const commands = {
+app.use("/assets", express.static("assets"));
+app.use(express.static("public"));
+
+const MEMES = {
   "!67": {
     gif: "assets/chat-commands/gif/67.wav",
     sound: "assets/chat-commands/sfx/67.wav"
@@ -86,26 +84,34 @@ const commands = {
   "!you-stupid": {
     gif: "assets/chat-commands/gif/you-stupid.wav",
     sound: "assets/chat-commands/sfx/you-stupid.wav"
-  },
+  }
 };
 
-// Serve files
-app.use(express.static("public"));
-app.use("/assets", express.static("assets"));
+// 🔥 CONNECT TO RESTREAM CHAT
+const restream = new WebSocket(
+  "wss://chat.restream.io/socket.io/re_7691830_event313536f6a3144d1b94de41ff123b1436"
+);
 
-// WebSocket
-wss.on("connection", ws => {
-  console.log("Overlay connected");
+restream.on("open", () => {
+  console.log("Connected to Restream chat");
+});
 
-  ws.on("message", msg => {
-    const command = msg.toString().toLowerCase();
+// Receive messages
+restream.on("message", (data) => {
+  const msg = data.toString();
 
-    if (commands[command]) {
-      ws.send(JSON.stringify({
+  // Chat messages always contain "message"
+  if (!msg.includes("message")) return;
+
+  for (const cmd in MEMES) {
+    if (msg.toLowerCase().includes(cmd)) {
+      const payload = JSON.stringify({
         type: "meme",
-        gif: commands[command].gif,
-        sound: commands[command].sound
-      }));
+        gif: MEMES[cmd].gif,
+        sound: MEMES[cmd].sound
+      });
+
+      wss.clients.forEach(ws => ws.send(payload));
     }
-  });
+  }
 });
