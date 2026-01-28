@@ -1,12 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <img id="meme" />
-  <audio id="sound"></audio>
+<body style="margin:0;background:transparent;overflow:hidden;">
 
-  <script src="overlay.js"></script>
+<img id="meme" style="display:none; width:300px; position:absolute;" />
+<audio id="sound"></audio>
+
+<script>
+const ws = new WebSocket("ws://localhost:3000");
+
+ws.onmessage = (msg) => {
+  const data = JSON.parse(msg.data);
+
+  const img = document.getElementById("meme");
+  const audio = document.getElementById("sound");
+
+  img.src = data.gif;
+  img.style.display = "block";
+
+  audio.src = data.sound;
+  audio.play();
+
+  setTimeout(() => {
+    img.style.display = "none";
+  }, 3000);
+};
+</script>
+
 </body>
 </html>
