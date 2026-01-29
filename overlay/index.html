@@ -6,7 +6,7 @@
 <audio id="sound"></audio>
 
 <script>
-const ws = new WebSocket("ws://localhost:3000");
+const ws = new WebSocket("https://polandletsplay.vercel.app/");
 
 ws.onmessage = (event) => {
   const data = JSON.parse(event.data);
