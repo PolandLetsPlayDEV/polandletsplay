@@ -2,10 +2,12 @@ const WebSocket = require("ws");
 const express = require("express");
 
 const app = express();
-const server = app.listen(3000);
+const server = app.listen(3000, () =>
+  console.log("Server running on https://polandletsplay.vercel.app/")
+);
+
 const wss = new WebSocket.Server({ server });
 
-app.use("/assets", express.static("assets"));
 app.use(express.static("public"));
 
 const MEMES = {
@@ -87,7 +89,7 @@ const MEMES = {
   }
 };
 
-// CONNECT TO RESTREAM CHAT
+//  Restream connection
 const restream = new WebSocket(
   "wss://chat.restream.io/socket.io/?EIO=3&transport=websocket"
 );
@@ -95,24 +97,18 @@ const restream = new WebSocket(
 restream.on("open", () => {
   console.log("Connected to Restream");
 
-  // Auth packet (required)
+  // Auth
   restream.send(
-    '40{"token":"998264a0-0376-4a7c-9639-75da74e213e6"}'
+    '40{"token":"re_7691830_event313536f6a3144d1b94de41ff123b1436"}'
   );
 });
 
-
-// Receive messages
 restream.on("message", (data) => {
-  const msg = data.toString();
-
-  // Chat messages always contain "message"
-  if (!msg.includes("message")) return;
+  const msg = data.toString().toLowerCase();
 
   for (const cmd in MEMES) {
-    if (msg.toLowerCase().includes(cmd)) {
+    if (msg.includes(cmd)) {
       const payload = JSON.stringify({
-        type: "meme",
         gif: MEMES[cmd].gif,
         sound: MEMES[cmd].sound
       });
