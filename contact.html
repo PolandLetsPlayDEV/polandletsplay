@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>PolandLet'sPlay – Contact</title>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+
+
+  /*well you probaqly wondering why the fuck is here the css instead been in the style.css file, well is because chatgpt was a bit a too lazy and there where so many error i just decided to copy and paste the old contact page code into the new page and there are also more reason why buy i dont wanna say because this shit am writing here is anyways way too fucking long so yeah..........   67*/
+
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Outfit', sans-serif;
+      background: #0f0f0f;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    a {
+      color: #8f94fb;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      padding: 2rem 1rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 0.3rem;
+    }
+
+    header p {
+      font-size: 1.2rem;
+      color: #eee;
+    }
+
+    nav {
+      background-color: #1a1a1a;
+      padding: 1rem;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: #f5f5f5;
+      margin: 0.5rem 1rem;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #2c2c2c;
+    }
+
+    .container {
+      padding: 2rem;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 2rem;
+      color: #8f94fb;
+      margin-bottom: 1rem;
+    }
+
+    form {
+      background: #1c1c1c;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+
+    input, textarea, select {
+      width: 100%;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      background: #2c2c2c;
+      border: none;
+      border-radius: 8px;
+      color: #fff;
+      font-family: 'Outfit', sans-serif;
+      font-size: 1rem;
+    }
+
+    button {
+      background: #8f94fb;
+      color: #000;
+      border: none;
+      padding: 0.7rem 1.5rem;
+      border-radius: 8px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1rem;
+    }
+
+    footer {
+      background-color: #111;
+      text-align: center;
+      padding: 2rem 1rem;
+      font-size: 0.9rem;
+      color: #aaa;
+      margin-top: 3rem;
+    }
+
+    .footer-links {
+      margin-bottom: 1rem;
+    }
+
+    .footer-links a {
+      color: #888;
+      margin: 0 0.5rem;
+    }
+
+    .footer-links a:hover {
+      color: #ccc;
+    }
+
+    .agreement {
+      margin-top: 1rem;
+      font-size: 0.9rem;
+      line-height: 1.4;
+    }
+
+    .agreement label {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 2rem; }
+
+      .container {
+        padding: 1rem;
+      }
+
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      nav a {
+        margin: 0.3rem 0;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Contact PolandLet'sPlay</h1>
+  <p>Get in touch for support, collabs, feedback, bugs, or licensing!</p>
+</header>
+
+<nav>
+  <a href="https://polandletsplay.dev">Home Page</a>
+  <a href="https://polandletsplay.dev/about-me">About Me</a>
+  <a href="https://polandletsplay.dev/projects">Projects</a>
+  <a href="https://polandletsplay.dev/contact">Contact</a>
+  <a href="https://polandletsplay.dev/behind-the-scenes">Behind the Scenes</a>
+</nav>
+
+<div class="container">
+  <h2>Send Me a Message</h2>
+  <form method="POST" action="https://formspree.io/f/mvzywjgk" enctype="multipart/form-data">
+    <input type="text" name="name" placeholder="Your Name" required>
+    <input type="email" name="email" placeholder="Your Email" required>
+    <textarea name="message" rows="6" placeholder="Write your full message here..." required></textarea>
+
+    <button type="submit">Send</button>
+  </form>
+</div>
+
+  <footer>
+  <div class="footer-links">
+    <a href="https://polandletsplay.dev/contact">Contact</a> •
+    <a href="https://polandletsplay.dev/terms-of-service">Terms of Service</a> •
+    <a href="https://polandletsplay.dev/privacy-policy">Privacy Policy</a> •
+    <a href="https://polandletsplay.dev/legal">Legal</a> •
+    <a href="https://cdn.polandletsplay.dev/">CDN</a> •
+    <a href="https://polandletsplay.dev/donate">Donate</a> •
+    <a href="https://polandletsplay.dev/dmca">DMCA</a> •
+    <a href="https://polandletsplay.dev/changelog">Changelog</a> •
+    <a href="https://polandletsplay.dev/media-kit">Media Kit</a>
+  </div>
+  &copy; 2025 - 2026 PolandLet'sPlay. All rights reserved.
+  <div class="footer-links">
+    <a href="https://youtube.com/@PolandLetsPlay___" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/youtube_white_icon.png" alt="YouTube" width="25" height="25"></a>
+    <a href="https://youtube.com/@polandletsplay_music" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/youtube_music_white_icon.png" alt="YouTube Music" width="25" height="25"></a>
+    <a href="https://youtube.com/@PolandPlayTV_PLP" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/youtube_gaming_white_icon.png" alt="YouTube Gaming" width="25" height="25"></a>
+    <a href="https://vk.com/id1037402223" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/vk_white_icon.png" alt="VK" width="25" height="25"></a>
+    <a href="https://discord.gg/svM5y2jeHF" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/discord_white_icon.png" alt="Discord" width="25" height="25"></a>
+    <a href="https://tiktok.com/@polandletsplay__" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/tiktok_white_icon.png" alt="TikTok" width="25" height="25"></a>
+    <a href="https://pinterest.com/PolandLetsPlay__" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/pinterest_white_icon.png" alt="Pinterest" width="25" height="25"></a>
+    <a href="https://steamcommunity.com/id/nendofrek555" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/steam_white_icon.png" alt="Steam" width="25" height="25"></a>
+    <a href="https://twitch.tv/polandletsplay_" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/twitch_white_icon.png" alt="Twitch" width="25" height="25"></a>
+    <a href="https://x.com/polandplayDEV" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/x_white_icon.png" alt="X" width="25" height="25"></a>
+    <a href="https://https://xbox.com/pl-PL/play/user/PolandPlayTV" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/xbox_white_icon.png" alt="Xbox" width="25" height="25"></a>
+    <a href="https://faceit.com/pl/players/PolandLetsTV" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/faceit_white_icon.png" alt="FACEIT" width="25" height="25"></a>
+    <a href="https://github.com/PolandLetsPlayDEV" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/github_white_icon.png" alt="GitHub" width="25" height="25"></a>
+    <a href="https://polandplaydev.itch.io/" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/instagram_white_icon.png" alt="itch.io" width="25" height="25"></a>
+    <a href="https://gamejolt.com/@PolandLetsPlay" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/gamejolt_white_icon.png" alt="GameJolt" width="25" height="25"></a>
+    <a href="https://linktr.ee/PolandLetsPlay" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/linktree_white_icon.png" alt="Linktree" width="25" height="25"></a>
+    <a href="https://leadwerks.com/community/profile/29938-polandletsplay/" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/leadwerks_white_icon.png" alt="Leadwerks" width="25" height="25"></a>
+    <a href="https://sketchfab.com/polandletsplay" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/sketchfab_white_icon.png" alt="Sketchfab" width="25" height="25"></a>
+    <a href="https://panaxgames.com/profile/PolandLetsPlay" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/panax_white_icon.png" alt="PANAX" width="25" height="25"></a>
+    <a href="https://profile.playstation.com/polandletsplay_" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/playstation_white_icon.png" alt="PlayStation" width="25" height="25"></a>
+    <a href="https://reddit.com/user/PolandLetsPlay/" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/reddit_white_icon.png" alt="Reddit" width="25" height="25"></a>
+    <a href="https://amazon.de/hz/wishlist/ls/2Q8POL6GXSTH6?ref_=wl_share" target="_blank"><img src="https://cdn.polandletsplay.dev/assets/social-platform-icons/amazon_white_icon.png" alt="Amazon" width="25" height="25"></a>
+  </div>
+</footer>
+</body>
+</html>
