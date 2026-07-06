@@ -654,4 +654,33 @@
 .gallery-item:hover img {
   transform: scale(1.03);
 }
+
+/*discord-verfiy-shit*/
+          .verification-card{
+    max-width:650px;
+    margin:auto;
+    margin-top:60px;
+    padding:35px;
+    background:#1d1d1d;
+    border-radius:18px;
+    box-shadow:0 0 35px rgba(255,105,180,.25);
+    text-align:center;
+}
+
+.verification-card h2{
+    color:#ff69b4;
+}
+
+.verification-card ul{
+    list-style:none;
+    padding:0;
+}
+
+.verification-card li{
+    padding:8px;
+}
+
+.button.discord{
+    background:#5865F2;
+}
     }
